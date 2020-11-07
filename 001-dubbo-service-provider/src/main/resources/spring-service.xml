@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://dubbo.apache.org/schema/dubbo
+       http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <!--
+      可以使用dubbo的标签进行服务的注册和订阅
+      包括dubbo的配置信息都在该标签中进行配置
+  -->
+    <!--1.配置工程名称，注册到dubbo的容器中使用的名称-->
+    <dubbo:application name="001-dubbo-service-provider"/>
+
+    <!--
+        2.使用的dubbo的协议和端口号
+            协议和端口默认是dubbo协议，20880
+    -->
+    <dubbo:protocol name="dubbo" port="20880"/>
+
+    <!--
+        3.服务的注册，service
+            interface：service的接口
+            ref：service接口的实现类对象
+            registry：不使用注册中心，使用直连的方式进行服务的注册
+    -->
+    <bean id="userService" class="com.bjpowernode.dubbo.service.impl.UserServiceImpl"/>
+
+    <dubbo:service interface="com.bjpowernode.dubbo.service.UserService"
+                   ref="userService"
+                   registry="N/A"/>
+
+</beans>
