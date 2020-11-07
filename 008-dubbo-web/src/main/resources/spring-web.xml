@@ -24,8 +24,27 @@
     <!--2.配置注册中心-->
     <dubbo:registry address="zookeeper://192.168.75.128:2181"/>
 
-    <!--3.订阅服务-->
-    <dubbo:reference id="userService" interface="com.bjpowernode.dubbo.service.UserService"/>
+
+    <!--使用xml方式进行服务的订阅-->
+    <!--
+            3.订阅服务
+                check:是否自动检查，默认值为true，自动检查
+                    false为不自动检查，启动工程，不去检查服务是否在注册中心中存在。
+                version:版本号
+                timeout:超时时间
+
+             可以通过注册中心客户端查看提供者和消费者的状况：
+                Linux虚拟机中进入到zooKeeper的bin目录
+                    执行./zkCli.sh
+                        ls /dubbo/服务Service
+                        ls /dubbo/服务Service/providers
+                        ls /dubbo/服务Service/consumers
+    -->
+    <!--<dubbo:reference check="false" id="userService" version="0.0.1" interface="com.bjpowernode.dubbo.service.UserService"/>-->
+
+    <!--3.使用注解的方式进行服务的订阅消费-->
+    <!--使用dubbo的注解扫描-->
+    <dubbo:annotation package="com.bjpowernode.dubbo.web"/>
 
 
 </beans>

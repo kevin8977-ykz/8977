@@ -13,35 +13,47 @@
         spring和dubbo、zookeeper客户端
     -->  
   <packaging>war</packaging>
-  <dependencies> 
-    <dependency> 
-      <groupId>org.springframework</groupId>  
-      <artifactId>spring-web</artifactId>  
-      <version>5.2.8.RELEASE</version> 
-    </dependency>  
-    <dependency> 
-      <groupId>org.springframework</groupId>  
-      <artifactId>spring-context</artifactId>  
-      <version>5.2.8.RELEASE</version> 
-    </dependency>  
-    <dependency> 
-      <groupId>com.alibaba</groupId>  
-      <artifactId>dubbo</artifactId>  
-      <version>2.6.2</version> 
-    </dependency>  
-    <!--zookeeper客户端依赖-->  
-    <dependency> 
-      <groupId>org.apache.curator</groupId>  
-      <artifactId>curator-framework</artifactId>  
-      <version>4.1.0</version> 
+  <!--<dependencies>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-web</artifactId>
+        <version>5.2.8.RELEASE</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>5.2.8.RELEASE</version>
+    </dependency>
+    <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>dubbo</artifactId>
+        <version>2.6.2</version>
+    </dependency>
+    &lt;!&ndash;zookeeper客户端依赖&ndash;&gt;
+    <dependency>
+        <groupId>org.apache.curator</groupId>
+        <artifactId>curator-framework</artifactId>
+        <version>4.1.0</version>
     </dependency>
 
-      <!--添加interface依赖-->
-      <dependency>
-          <groupId>com.bjpowernode.dubbo</groupId>
-          <artifactId>006-dubbo-interface</artifactId>
-          <version>1.0-SNAPSHOT</version>
-      </dependency>
+    &lt;!&ndash;添加interface依赖&ndash;&gt;
+    <dependency>
+        <groupId>com.bjpowernode.dubbo</groupId>
+        <artifactId>009-dubbo-mapper</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </dependency>
 
-  </dependencies> 
+
+
+</dependencies>-->
+
+    <dependencies>
+        <dependency>
+            <groupId>com.bjpowernode.dubbo</groupId>
+            <artifactId>009-dubbo-mapper</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+
 </project>

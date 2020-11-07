@@ -12,6 +12,7 @@
         <module>../006-dubbo-interface</module>
         <module>../007-dubbo-domain</module>
         <module>../008-dubbo-web</module>
+        <module>../009-dubbo-mapper</module>
     </modules>
     <packaging>pom</packaging>
 
