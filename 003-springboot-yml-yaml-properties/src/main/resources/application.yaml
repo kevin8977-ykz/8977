@@ -1,0 +1,51 @@
+# 字符串
+uname: liudehua
+hobby: rap
+age: 27
+
+# yml 和  yaml 的语法格式：
+# 以空格或缩进符（Tab键）来进行层级的关系展示
+
+# 定义一个对象
+# 定义对象中的复杂结构
+# list、set、array使用方式，都是一样的
+# 对象和map是一样的
+sz2005:
+  uname: libai
+  hobby: changtiaoRap
+  age: 16
+  list:
+    - a
+    - b
+    - c
+    - d
+    - e
+    - f
+    - g
+  map:
+    key1: value1
+    key2: value2
+    key3: value3
+    key4: value4
+    key5: value5
+    key6: value6
+  array:
+    - h
+    - j
+    - k
+    - l
+    - xxx
+  set:
+    - q
+    - w
+    - e
+    - r
+    - t
+    - y
+    - u
+# 修改自动配置
+# 修改端口号和工程项目路径
+server:
+  port: 8888
+  servlet:
+    context-path: /springboot

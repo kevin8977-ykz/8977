@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.5.RELEASE</version>
+    </parent>
+
+    <groupId>com.bjpowernode.springboot</groupId>
+    <artifactId>002-springboot-maven</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!--
+        Springboot 工程的标识：
+            1.继承springboot父工程
+            2.在resources目录中，添加配置文件(属性文件)
+                application.properties
+                    格式：键值对，xxx=xxx
+                application.yaml
+                application.yml
+                    yaml和yml只能存在一份
+                    配置文件必须以application开头
+            3.导入启动的依赖坐标
+            4.创建引导类(创建方式是固定的)
+
+    -->
+    <dependencies>
+        <!--在父工程当中定义了版本，版本控制、版本锁定-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <!--springboot整合springmvc-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
+
+
+</project>

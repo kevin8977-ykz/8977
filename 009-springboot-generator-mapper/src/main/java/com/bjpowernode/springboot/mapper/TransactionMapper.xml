@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bjpowernode.springboot.mapper.TransactionMapper">
+  <resultMap id="BaseResultMap" type="com.bjpowernode.springboot.model.Transaction">
+    <id column="id" jdbcType="CHAR" property="id" />
+    <result column="owner" jdbcType="VARCHAR" property="owner" />
+    <result column="amountOfMoney" jdbcType="BIGINT" property="amountofmoney" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="expectedClosingDate" jdbcType="CHAR" property="expectedclosingdate" />
+    <result column="customerId" jdbcType="CHAR" property="customerid" />
+    <result column="stage" jdbcType="VARCHAR" property="stage" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="source" jdbcType="VARCHAR" property="source" />
+    <result column="activityId" jdbcType="CHAR" property="activityid" />
+    <result column="contactsId" jdbcType="CHAR" property="contactsid" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="createBy" jdbcType="VARCHAR" property="createby" />
+    <result column="createTime" jdbcType="CHAR" property="createtime" />
+    <result column="editBy" jdbcType="VARCHAR" property="editby" />
+    <result column="editTime" jdbcType="CHAR" property="edittime" />
+    <result column="contactSummary" jdbcType="VARCHAR" property="contactsummary" />
+    <result column="nextContactTime" jdbcType="CHAR" property="nextcontacttime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, owner, amountOfMoney, name, expectedClosingDate, customerId, stage, type, source, 
+    activityId, contactsId, description, createBy, createTime, editBy, editTime, contactSummary, 
+    nextContactTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_transaction
+    where id = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from tbl_transaction
+    where id = #{id,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.bjpowernode.springboot.model.Transaction">
+    insert into tbl_transaction (id, owner, amountOfMoney, 
+      name, expectedClosingDate, customerId, 
+      stage, type, source, 
+      activityId, contactsId, description, 
+      createBy, createTime, editBy, 
+      editTime, contactSummary, nextContactTime
+      )
+    values (#{id,jdbcType=CHAR}, #{owner,jdbcType=VARCHAR}, #{amountofmoney,jdbcType=BIGINT}, 
+      #{name,jdbcType=VARCHAR}, #{expectedclosingdate,jdbcType=CHAR}, #{customerid,jdbcType=CHAR}, 
+      #{stage,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{source,jdbcType=VARCHAR}, 
+      #{activityid,jdbcType=CHAR}, #{contactsid,jdbcType=CHAR}, #{description,jdbcType=VARCHAR}, 
+      #{createby,jdbcType=VARCHAR}, #{createtime,jdbcType=CHAR}, #{editby,jdbcType=VARCHAR}, 
+      #{edittime,jdbcType=CHAR}, #{contactsummary,jdbcType=VARCHAR}, #{nextcontacttime,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.bjpowernode.springboot.model.Transaction">
+    insert into tbl_transaction
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="owner != null">
+        owner,
+      </if>
+      <if test="amountofmoney != null">
+        amountOfMoney,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="expectedclosingdate != null">
+        expectedClosingDate,
+      </if>
+      <if test="customerid != null">
+        customerId,
+      </if>
+      <if test="stage != null">
+        stage,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="source != null">
+        source,
+      </if>
+      <if test="activityid != null">
+        activityId,
+      </if>
+      <if test="contactsid != null">
+        contactsId,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="createby != null">
+        createBy,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="editby != null">
+        editBy,
+      </if>
+      <if test="edittime != null">
+        editTime,
+      </if>
+      <if test="contactsummary != null">
+        contactSummary,
+      </if>
+      <if test="nextcontacttime != null">
+        nextContactTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="owner != null">
+        #{owner,jdbcType=VARCHAR},
+      </if>
+      <if test="amountofmoney != null">
+        #{amountofmoney,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="expectedclosingdate != null">
+        #{expectedclosingdate,jdbcType=CHAR},
+      </if>
+      <if test="customerid != null">
+        #{customerid,jdbcType=CHAR},
+      </if>
+      <if test="stage != null">
+        #{stage,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null">
+        #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="activityid != null">
+        #{activityid,jdbcType=CHAR},
+      </if>
+      <if test="contactsid != null">
+        #{contactsid,jdbcType=CHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="createby != null">
+        #{createby,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=CHAR},
+      </if>
+      <if test="editby != null">
+        #{editby,jdbcType=VARCHAR},
+      </if>
+      <if test="edittime != null">
+        #{edittime,jdbcType=CHAR},
+      </if>
+      <if test="contactsummary != null">
+        #{contactsummary,jdbcType=VARCHAR},
+      </if>
+      <if test="nextcontacttime != null">
+        #{nextcontacttime,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bjpowernode.springboot.model.Transaction">
+    update tbl_transaction
+    <set>
+      <if test="owner != null">
+        owner = #{owner,jdbcType=VARCHAR},
+      </if>
+      <if test="amountofmoney != null">
+        amountOfMoney = #{amountofmoney,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="expectedclosingdate != null">
+        expectedClosingDate = #{expectedclosingdate,jdbcType=CHAR},
+      </if>
+      <if test="customerid != null">
+        customerId = #{customerid,jdbcType=CHAR},
+      </if>
+      <if test="stage != null">
+        stage = #{stage,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="source != null">
+        source = #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="activityid != null">
+        activityId = #{activityid,jdbcType=CHAR},
+      </if>
+      <if test="contactsid != null">
+        contactsId = #{contactsid,jdbcType=CHAR},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="createby != null">
+        createBy = #{createby,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=CHAR},
+      </if>
+      <if test="editby != null">
+        editBy = #{editby,jdbcType=VARCHAR},
+      </if>
+      <if test="edittime != null">
+        editTime = #{edittime,jdbcType=CHAR},
+      </if>
+      <if test="contactsummary != null">
+        contactSummary = #{contactsummary,jdbcType=VARCHAR},
+      </if>
+      <if test="nextcontacttime != null">
+        nextContactTime = #{nextcontacttime,jdbcType=CHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bjpowernode.springboot.model.Transaction">
+    update tbl_transaction
+    set owner = #{owner,jdbcType=VARCHAR},
+      amountOfMoney = #{amountofmoney,jdbcType=BIGINT},
+      name = #{name,jdbcType=VARCHAR},
+      expectedClosingDate = #{expectedclosingdate,jdbcType=CHAR},
+      customerId = #{customerid,jdbcType=CHAR},
+      stage = #{stage,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      source = #{source,jdbcType=VARCHAR},
+      activityId = #{activityid,jdbcType=CHAR},
+      contactsId = #{contactsid,jdbcType=CHAR},
+      description = #{description,jdbcType=VARCHAR},
+      createBy = #{createby,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=CHAR},
+      editBy = #{editby,jdbcType=VARCHAR},
+      editTime = #{edittime,jdbcType=CHAR},
+      contactSummary = #{contactsummary,jdbcType=VARCHAR},
+      nextContactTime = #{nextcontacttime,jdbcType=CHAR}
+    where id = #{id,jdbcType=CHAR}
+  </update>
+</mapper>
