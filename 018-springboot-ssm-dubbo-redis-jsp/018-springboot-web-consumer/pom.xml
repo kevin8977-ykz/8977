@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">  
+  <modelVersion>4.0.0</modelVersion>  
+  <parent> 
+    <groupId>com.bjpowernode.springboot</groupId>  
+    <artifactId>018-springboot-ssm-dubbo-redis-jsp</artifactId>  
+    <version>0.0.1-SNAPSHOT</version> 
+  </parent>  
+  <artifactId>018-springboot-web-consumer</artifactId>  
+  <version>0.0.1-SNAPSHOT</version>
+
+  <name>018-springboot-web-consumer</name>  
+  <description>Demo project for Spring Boot</description>  
+  <properties> 
+    <java.version>1.8</java.version> 
+  </properties>
+
+  <dependencies>
+      <!--Dubbo 集成 SpringBoot 框架起步依赖-->
+      <dependency>
+          <groupId>com.alibaba.spring.boot</groupId>
+          <artifactId>dubbo-spring-boot-starter</artifactId>
+          <version>2.0.0</version>
+      </dependency>
+      <!--Zookeeper 客户端依赖-->
+      <!--Zookeeper 客户端依赖-->
+      <dependency>
+          <groupId>com.101tec</groupId>
+          <artifactId>zkclient</artifactId>
+          <version>0.10</version>
+          <!--提示没有logFactory环境-->
+          <exclusions>
+              <exclusion>
+                  <artifactId>slf4j-log4j12</artifactId>
+                  <groupId>org.slf4j</groupId>
+              </exclusion>
+          </exclusions>
+      </dependency>
+
+
+
+      <!--引入 Spring Boot 内嵌的 Tomcat 对 JSP 的解析包，不加解析不了 jsp 页面-->
+      <!--如果只是使用 JSP 页面，可以只添加该依赖-->
+      <dependency>
+          <groupId>org.apache.tomcat.embed</groupId>
+          <artifactId>tomcat-embed-jasper</artifactId>
+      </dependency>
+
+      <dependency>
+          <groupId>com.bjpowernode.springboot</groupId>
+          <artifactId>018-springboot-interface</artifactId>
+          <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+
+      <!--如果要使用servlet必须添加该以下两个依赖--> <!-- servlet 依赖的 jar 包-->
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>javax.servlet-api</artifactId>
+      </dependency>
+      <dependency>
+          <groupId>javax.servlet.jsp</groupId>
+          <artifactId>javax.servlet.jsp-api</artifactId>
+          <version>2.3.1</version>
+      </dependency>
+
+      <!--如果使用 JSTL必须添加该依赖--> <!--jstl 标签依赖的 jar 包start-->
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>jstl</artifactId>
+      </dependency>
+
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter</artifactId>
+      </dependency>
+
+
+  </dependencies>  
+  <build>
+
+
+      <!--手动加载jsp-->
+      <resources>
+          <resource>
+              <directory>src/main/webapp</directory>
+              <includes>
+                  <include>**/*.jsp</include>
+              </includes>
+
+              <!--编译后的路径-->
+              <targetPath>META-INF/resources</targetPath>
+          </resource>
+      </resources>
+
+      <plugins>
+      <plugin> 
+        <groupId>org.springframework.boot</groupId>  
+        <artifactId>spring-boot-maven-plugin</artifactId> 
+      </plugin> 
+    </plugins> 
+  </build> 
+</project>

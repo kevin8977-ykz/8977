@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h3>从model中获取数据，然后逻辑判断</h3>
+    <div th:if="${user}!=null">
+        <!--<div th:text="${user}"></div>-->
+        <div>if ，条件成立，显示该标签</div>
+    </div>
+
+    <div th:unless="${user}==null">
+        <div> unless，条件不成立，显示该标签</div>
+    </div>
+
+    <h3>switch</h3>
+    <div th:switch="${1}">
+        <div th:case="0">
+            <div >条件为0</div>
+        </div>
+        <div th:case="1">
+            <div >条件为1</div>
+        </div>
+        <div th:case="*">
+            <div >条件为其他</div>
+        </div>
+    </div>
+
+
+    <h3>从session中获取数据，然后逻辑判断</h3>
+
+    <div th:if="${#session.getAttribute('user1')} == null">
+        <div>没有获取到Session中的数据对象</div>
+    </div>
+
+    <div th:unless="${#session.getAttribute('user1') }== null">
+        <div>获取到Session中的数据对象</div>
+        <!--<div th:text="${#httpSession.getAttribute('user1')}">获取到Session中的数据对象</div>-->
+    </div>
+
+    <!--<div th:if="${session.user1}">-->
+        <div th:text="${session.user1.name}"></div>
+    <!--</div>-->
+
+    <h3>内置函数使用方式:request</h3>
+    协议头：<span th:text="${#request.scheme}"></span><br>
+    remoteAddr域  名：<span th:text="${#request.remoteAddr}"></span><br>
+    serverName域 名：<span th:text="${#request.serverName}"></span><br>
+    端口号：<span th:text="${#request.serverPort}"></span><br>
+    项目路径：<span th:text="${#request.contextPath}"></span><br>
+    requestURL请求路径：<span th:text="${#request.requestURL}"></span><br>
+    requestURI请求路径：<span th:text="${#request.requestURI}"></span><br>
+    请求参数：<span th:text="${#request.queryString}"></span><br>
+
+
+
+
+</body>
+</html>

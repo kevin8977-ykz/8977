@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">  
+  <modelVersion>4.0.0</modelVersion>  
+  <parent> 
+    <groupId>org.springframework.boot</groupId>  
+    <artifactId>spring-boot-starter-parent</artifactId>  
+    <version>2.3.5.RELEASE</version>  
+    <relativePath/>  
+    <!-- lookup parent from repository --> 
+  </parent>  
+  <groupId>com.bjpowernode.springboot</groupId>  
+  <artifactId>016-springboot-servlet-filter-encoding</artifactId>  
+  <version>0.0.1-SNAPSHOT</version>  
+
+  <name>016-springboot-servlet-filter-encoding</name>  
+  <description>Demo project for Spring Boot</description>  
+  <properties> 
+    <java.version>1.8</java.version> 
+  </properties>  
+  <dependencies> 
+    <dependency> 
+      <groupId>org.springframework.boot</groupId>  
+      <artifactId>spring-boot-starter-web</artifactId> 
+    </dependency>  
+    <dependency> 
+      <groupId>org.springframework.boot</groupId>  
+      <artifactId>spring-boot-starter-test</artifactId>  
+      <scope>test</scope>  
+      <exclusions> 
+        <exclusion> 
+          <groupId>org.junit.vintage</groupId>  
+          <artifactId>junit-vintage-engine</artifactId> 
+        </exclusion> 
+      </exclusions> 
+    </dependency>  
+    <dependency> 
+      <groupId>javax.servlet.jsp</groupId>  
+      <artifactId>javax.servlet.jsp-api</artifactId>  
+      <version>2.3.1</version> 
+    </dependency>  
+    <dependency> 
+      <groupId>javax.servlet</groupId>  
+      <artifactId>javax.servlet-api</artifactId> 
+    </dependency>  
+    <dependency> 
+      <groupId>javax.servlet</groupId>  
+      <artifactId>jstl</artifactId> 
+    </dependency>  
+    <!--SpringBoot 项目内嵌 tomcat 对 jsp 的解析包-->  
+    <dependency> 
+      <groupId>org.apache.tomcat.embed</groupId>  
+      <artifactId>tomcat-embed-jasper</artifactId> 
+    </dependency> 
+  </dependencies>  
+  <build> 
+    <resources> 
+      <resource> 
+        <!--源文件夹-->  
+        <directory>src/main/webapp</directory>  
+        <!--目标文件夹-->  
+        <targetPath>META-INF/resources</targetPath>  
+        <!--包含的文件-->  
+        <includes> 
+          <include>**/*.*</include> 
+        </includes> 
+      </resource>  
+      <!--mybatis 的 mapper.xml-->  
+      <resource> 
+        <directory>src/main/java</directory>  
+        <includes> 
+          <include>**/*.xml</include> 
+        </includes> 
+      </resource>  
+      <!--src/main/resources 下的所有配置文件编译到 classes 下面去-->  
+      <resource> 
+        <directory>src/main/resources</directory>  
+        <includes> 
+          <include>**/*.*</include> 
+        </includes> 
+      </resource> 
+    </resources>  
+    <plugins> 
+      <plugin> 
+        <groupId>org.springframework.boot</groupId>  
+        <artifactId>spring-boot-maven-plugin</artifactId>  
+        <version>1.4.2.RELEASE</version> 
+      </plugin> 
+    </plugins> 
+  </build> 
+</project>

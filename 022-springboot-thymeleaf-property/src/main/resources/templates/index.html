@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div th:text="${data}"></div>
+
+<h3>th:action属性的使用</h3>
+<h2>请求路径中需要动态获取变量数据时，必须添加th前缀</h2>
+<form th:action="@{'/user/login?id='+${user.id}}"></form>
+
+
+<h2>以下两种方式获取不到用户id</h2>
+<form action="'/user/login?id='+${user.id}"></form>
+<form action="/user/login"+${user.id}></form>
+
+
+<h1>th:method属性的使用</h1>
+<form th:action="@{/user/login}" th:method="post"></form>
+
+<h1>th:href</h1>
+<a href="http://www.baidu.com">百度</a>><br/>
+<a th:href="'http://www.baidu.com?id='+${user.id}">th:href链接</a>
+
+
+<h1>th:src属性的使用</h1>
+
+<script src="/static/js/jquery-1.7.2.min.js"></script>
+
+<script typeof="text/javascript" th:src="@{/js/jquery-1.7.2.min.js}"></script>
+<script>
+    $(function () {
+        alert("引入js文件")
+    })
+</script>
+
+    <img src="/static/img/e543fa44f81b53aa7a3f28810f283eae.jpeg"><br>
+    <img th:src="@{/img/e543fa44f81b53aa7a3f28810f283eae.jpeg}"><br>
+
+
+<span th:id="${hello}">aaa</span>
+
+    <input th:type="text" th:id="userName" th:name="userName" th:value="${user.id}">
+
+
+    <h1>th:attr 属性的使用</h1>
+    <span zhangsan="${user.name}"></span>
+    <!--通过 th:attr 对自定义的属性赋值-->
+    <span th:attr="zhangsan=${user.name}"></span>
+
+    <h1>th:onclick 的使用</h1>
+    <!--目前 thymeleaf 版本要求只能传递数字和布尔值-->
+    <a th:onclick="'show('+${user.id}+')'"
+       th:style="'font-size:40px;color:red;'">点击：显示学生编号</a>
+
+    <script type="text/javascript">
+        function show(id) {
+            alert("用户编号为：" + id);
+        }
+    </script>
+
+
+</body>
+</html>

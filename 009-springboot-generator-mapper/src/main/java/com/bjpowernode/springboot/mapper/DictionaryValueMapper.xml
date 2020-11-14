@@ -90,4 +90,6 @@
       typeCode = #{typecode,jdbcType=VARCHAR}
     where id = #{id,jdbcType=CHAR}
   </update>
+
+
 </mapper>

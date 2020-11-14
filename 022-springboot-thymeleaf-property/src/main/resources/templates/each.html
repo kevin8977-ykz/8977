@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en"   xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>遍历循环List集合</title>
+</head>
+<body>
+    <h3>th:each遍历循环List集合</h3>
+<div style="color: red">
+    1.user:当前对象的变量名<br/>
+    2.userStat:当前对象的状态变量名<br/>
+    3.${userList}:循环遍历的集合<br/>
+    4.变量名自定义
+</div>
+    <table border="1">
+        <tbody>
+        <tr>
+            <td>下标</td>
+            <td>学号</td>
+            <td>姓名</td>
+            <td>手机号码</td>
+            <td>地址</td>
+        </tr>
+    <div th:each="user,userStat:${userList}">
+        <tr>
+        <td th:text="${userStat.index}"></td>
+        <td  th:text="${user.id}"></td >
+        <td  th:text="${user.name}"></td >
+        <td  th:text="${user.phone}"></td >
+        <td  th:text="${user.address}"></td >
+        </tr>
+    </div>
+        </tbody>
+    </table>
+    <table border="1">
+        <tr>
+            <td>下标</td>
+            <td>学号</td>
+            <td>姓名</td>
+            <td>手机号码</td>
+            <td>地址</td>
+        </tr>
+        <tbody>
+        <h3>th:each遍历循环Set集合</h3>
+        <div th:each="set:${userSet}">
+            <tr style="color: blue">
+                <td th:text="${setStat.index}"></td>
+                <td  th:text="${set.id}"></td >
+                <td  th:text="${set.name}"></td >
+                <td  th:text="${set.phone}"></td >
+                <td  th:text="${set.address}"></td >
+            </tr>
+        </div>
+        </tbody>
+    </table>
+    <h3>th:each遍历数组</h3>
+    <table border="1">
+        <tr>
+            <td>序列</td>
+            <td>Celebrity</td>
+        </tr>
+    <div th:each="str:${strArr}">
+        <tr style="color: pink">
+            <td th:text="${strStat.index}"></td>
+            <td  th:text="${str}"></td >
+        </tr>
+    </div>
+    </table>
+
+    <h3>th:each遍历Map集合</h3>
+    <table border="1" style="color: darkorchid">
+        <tbody>
+        <tr>
+            <td>下标</td>
+            <td>KEY</td>
+            <td>Value</td>
+            <td>学号</td>
+            <td>姓名</td>
+            <td>手机号码</td>
+            <td>地址</td>
+        </tr>
+        <div th:each="map:${userMaps}">
+            <tr>
+                <td th:text="${mapStat.count}"></td>
+                <td th:text="${map.key}"></td>
+                <td th:text="${map.value}"></td>
+                <td th:text="${map.value.id}"></td>
+                <td th:text="${map.value.name}"></td>
+                <td th:text="${map.value.phone}"></td>
+                <td th:text="${map.value.address}"></td>
+            </tr>
+        </div>
+        </tbody>
+    </table>
+
+    <h3>循环遍历复杂集合:list -> Map -> List -> User</h3>
+    <table border="1" style="color:#8e8e8e">
+        <tbody>
+        <tr>
+            <td>下标</td>
+            <td>学号</td>
+            <td>姓名</td>
+            <td>手机号码</td>
+            <td>地址</td>
+        </tr>
+        <div th:each="myListMap:${myList}">
+          <div th:each="myListMapObj:${myListMap}">
+              Map 集合的 key：<span th:text="${myListMapObj.key}"></span>
+              <div th:each="user:${myListMapObj.value}">
+                    <tr>
+                        <td th:text="${userStat.count}"></td>
+                        <td th:text="${user.id}"></td>
+                        <td th:text="${user.name}"></td>
+                        <td th:text="${user.phone}"></td>
+                        <td th:text="${user.address}"></td>
+                    </tr>
+              </div>
+          </div>
+        </div>
+        </tbody>
+    </table>
+
+</body>
+</html>
