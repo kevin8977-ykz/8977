@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/001_p2p_parent/pom.xml" />
+        <option value="$PROJECT_DIR$/002_p2p-exterface/pom.xml" />
+        <option value="$PROJECT_DIR$/003_p2p_dataservice/pom.xml" />
+        <option value="$PROJECT_DIR$/004_p2p_common/pom.xml" />
+        <option value="$PROJECT_DIR$/005_p2p_web/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="002_p2p-exterface" />
+        <module name="003_p2p_dataservice" />
+        <module name="004_p2p_common" />
+        <module name="005_p2p_web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8">
+      <module name="001_p2p_parent" target="1.8" />
+      <module name="002_p2p-exterface" target="1.8" />
+      <module name="003_p2p_dataservice" target="1.8" />
+      <module name="004_p2p_common" target="1.8" />
+      <module name="005_p2p_web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="001_p2p_parent" options="-parameters" />
+      <module name="002_p2p-exterface" options="-parameters" />
+      <module name="003_p2p_dataservice" options="-parameters" />
+      <module name="004_p2p_common" options="-parameters" />
+      <module name="005_p2p_web" options="-parameters" />
+    </option>
+  </component>
+</project>
