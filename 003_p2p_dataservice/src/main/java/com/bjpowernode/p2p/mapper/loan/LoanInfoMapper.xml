@@ -369,4 +369,15 @@
       version = #{version,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+    <!--Double selectHistoryAverageRate-->
+    <select id="selectHistoryAverageRate" resultType="double">
+        select cast( avg(rate) as DECIMAL (10,2) )  from b_loan_info
+    </select>
+
+    <!--List<LoanInfo> selectLoanInfoListByProductType(int productType, int pageNoIndex, int pageSize);-->
+    <select id="selectLoanInfoListByProductType" resultMap="BaseResultMap">
+        select * from b_loan_info where product_type=#{productType} order by release_time desc  limit #{pageNo},#{pageSize}
+    </select>
+
 </mapper>

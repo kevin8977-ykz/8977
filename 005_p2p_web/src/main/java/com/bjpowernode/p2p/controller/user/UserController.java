@@ -1,7 +1,7 @@
 package com.bjpowernode.p2p.controller.user;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.bjpowernode.p2p.model.service.UserService;
+import com.bjpowernode.p2p.service.user.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;

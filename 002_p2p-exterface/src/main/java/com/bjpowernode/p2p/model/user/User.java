@@ -1,8 +1,9 @@
 package com.bjpowernode.p2p.model.user;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class User {
+public class User implements Serializable {
     private Integer id;
 
     private String phone;
@@ -18,6 +19,20 @@ public class User {
     private Date lastLoginTime;
 
     private String headerImage;
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", phone='" + phone + '\'' +
+                ", loginPassword='" + loginPassword + '\'' +
+                ", name='" + name + '\'' +
+                ", idCard='" + idCard + '\'' +
+                ", addTime=" + addTime +
+                ", lastLoginTime=" + lastLoginTime +
+                ", headerImage='" + headerImage + '\'' +
+                '}';
+    }
 
     public Integer getId() {
         return id;

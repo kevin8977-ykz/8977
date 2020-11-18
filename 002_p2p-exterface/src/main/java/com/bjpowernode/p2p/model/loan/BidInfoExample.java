@@ -1,10 +1,11 @@
 package com.bjpowernode.p2p.model.loan;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class BidInfoExample {
+public class BidInfoExample implements Serializable {
     protected String orderByClause;
 
     protected boolean distinct;

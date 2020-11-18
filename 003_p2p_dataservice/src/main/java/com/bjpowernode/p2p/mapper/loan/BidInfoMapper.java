@@ -3,6 +3,8 @@ package com.bjpowernode.p2p.mapper.loan;
 import com.bjpowernode.p2p.model.loan.BidInfo;
 import com.bjpowernode.p2p.model.loan.BidInfoExample;
 import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface BidInfoMapper {
@@ -27,4 +29,9 @@ public interface BidInfoMapper {
     int updateByPrimaryKeySelective(BidInfo record);
 
     int updateByPrimaryKey(BidInfo record);
+
+    Double selectTotalBidMoney();
+
+    //根据产品ID,查询给产品的投资金额、投资时间、用户的手机号码
+    List<Map<String, Object>> selectBidInfoListByLoanId(Integer loanId);
 }

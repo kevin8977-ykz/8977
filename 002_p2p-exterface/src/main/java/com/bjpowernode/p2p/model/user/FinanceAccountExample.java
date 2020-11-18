@@ -1,9 +1,10 @@
 package com.bjpowernode.p2p.model.user;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FinanceAccountExample {
+public class FinanceAccountExample implements Serializable {
     protected String orderByClause;
 
     protected boolean distinct;

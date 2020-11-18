@@ -27,4 +27,12 @@ public interface LoanInfoMapper {
     int updateByPrimaryKeySelective(LoanInfo record);
 
     int updateByPrimaryKey(LoanInfo record);
+
+    Double selectHistoryAverageRate();
+
+    //根据产品类型查询产品列表数据
+    List<LoanInfo> selectLoanInfoListByProductType(@Param("productType") int productType,
+                                                   @Param("pageNo") int pageNoIndex,
+                                                   @Param("pageSize") int pageSize);
+
 }

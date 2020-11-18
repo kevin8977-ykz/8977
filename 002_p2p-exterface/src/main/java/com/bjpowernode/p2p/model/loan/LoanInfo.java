@@ -1,8 +1,9 @@
 package com.bjpowernode.p2p.model.loan;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class LoanInfo {
+public class LoanInfo implements Serializable {
     private Integer id;
 
     private String productName;
@@ -32,6 +33,27 @@ public class LoanInfo {
     private String productDesc;
 
     private Integer version;
+
+    @Override
+    public String toString() {
+        return "LoanInfo{" +
+                "id=" + id +
+                ", productName='" + productName + '\'' +
+                ", rate=" + rate +
+                ", cycle=" + cycle +
+                ", releaseTime=" + releaseTime +
+                ", productType=" + productType +
+                ", productNo='" + productNo + '\'' +
+                ", productMoney=" + productMoney +
+                ", leftProductMoney=" + leftProductMoney +
+                ", bidMinLimit=" + bidMinLimit +
+                ", bidMaxLimit=" + bidMaxLimit +
+                ", productStatus=" + productStatus +
+                ", productFullTime=" + productFullTime +
+                ", productDesc='" + productDesc + '\'' +
+                ", version=" + version +
+                '}';
+    }
 
     public Integer getId() {
         return id;
