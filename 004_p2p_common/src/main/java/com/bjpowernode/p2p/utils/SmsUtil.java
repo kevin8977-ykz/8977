@@ -18,8 +18,8 @@ public class SmsUtil {
     //产品域名,开发者无需替换
     static final String domain = "dysmsapi.aliyuncs.com";
 
-    static final String accessKeyId = "LTAI4GBbqPqmW48KPR95AWbE";
-    static final String accessKeySecret = "Gg1vyhDBYnsmIcHihqdJcFG7xOH6ko";
+    static final String accessKeyId = "LTAI4GBbqPqmW48KPR95AW";
+    static final String accessKeySecret = "Gg1vyhDBYnsmIcHihqdJcFG7xOH6";
 
     public static SendSmsResponse sendSms(String phone ,String messageCode ) throws ClientException {
 
