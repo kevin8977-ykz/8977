@@ -29,4 +29,8 @@ public interface UserMapper {
     int updateByPrimaryKey(User record);
 
     Integer checkPhoneNumRegisted(String phone);
+
+    int updateRegisteData(@Param("id") Integer id,
+                           @Param("realName") String realName,
+                           @Param("idCard") String idCard);
 }

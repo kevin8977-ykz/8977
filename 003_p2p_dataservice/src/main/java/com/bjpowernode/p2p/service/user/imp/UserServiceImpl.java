@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
+import java.sql.Time;
 import java.util.Date;
 import java.util.List;
 
@@ -98,10 +99,55 @@ public class UserServiceImpl implements UserService {
         System.out.println("保存前："+user);
         userMapper.insertSelective(user);
         System.out.println("保存后："+user);
+
+        //将密码设置为”“，空字符串
+        user.setLoginPassword("");
+
         return user;
 
+    }
+
+    //更新实名认证信息
+    @Override
+    public User updateRegisteData(Integer id, String realName, String idCard) {
+
+        //1.根据id，将用户查询出来
+        User user = userMapper.selectByPrimaryKey(id);
+        //2.设置真实姓名和身份证号码
+        user.setName(realName);
+        user.setIdCard(idCard);
+        //3.更新到数据库中
+        userMapper.updateByPrimaryKeySelective(user);
+        //4.将密码设置为”“
+        user.setLoginPassword("");
+        //5.返回更新后的用户(更新的真实姓名和身份证号码)
+        return user;
+    }
+
+    @Override
+    public User login(String phone, String loginPassword) {
+        UserExample example = new UserExample();
+
+        UserExample.Criteria criteria = example.createCriteria();
+        criteria.andPhoneEqualTo(phone);
+        criteria.andLoginPasswordEqualTo(loginPassword);
+        //根据手机号码和密码查询，只能出一个用户
+        List<User> users = userMapper.selectByExample(example);
+
+        if(ObjectUtils.isNotEmpty(users)){
+            User user = new User();
+            user.setId(users.get(0).getId());
+            user.setLastLoginTime(new Date());
+            int i = userMapper.updateByPrimaryKeySelective(user);
+            if( i <= 0){
+                System.out.println("最后登录时间，更新失败！");
+            }
+            System.out.println(user);
+            return users.get(0);
+        }
 
 
+        return null;
     }
 
 

@@ -282,5 +282,11 @@
     </select>
 
 
+    <!--User updateRegisteData(Integer id, String realName, String idCard);-->
+    <update id="updateRegisteData" parameterType="com.bjpowernode.p2p.model.user.User" >
+        update u_user set name=#{realName},id_card=#{idCard} where id=#{id}
+    </update>
+
+
 
 </mapper>

@@ -72,9 +72,6 @@ $(function () {
                     }else {
                         showError("phone",data.msg);
                     }
-                },
-                error:function () {
-                    //网络异常
                 }
             })
         }
@@ -181,7 +178,7 @@ $(function () {
         //发送ajax请求，发送短信验证码
         $("#phone").blur();
         //获取验证结果
-        var text = $("div[id$=Err]").text();
+        var text = $("div[id=phoneErr]").text();
 
         if(text === ""){
             //验证通过

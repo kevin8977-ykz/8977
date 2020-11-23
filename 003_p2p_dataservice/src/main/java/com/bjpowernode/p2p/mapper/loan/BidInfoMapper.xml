@@ -236,13 +236,46 @@
         select sum(bid_money) from b_bid_info
     </select>
 
-    <!--  List<Map<String, Object>> selectBidInfoListByLoanId(Integer loanId);-->
-    <select id="selectBidInfoListByLoanId" resultType="map">
+    <!--
+         List<Map<String, Object>> selectBidInfoListByLoanId(@Param("loanId") Integer loanId,
+                                                        @Param("pageIndex") Integer pageIndex,
+                                                        @Param("pageSize") Integer pageSize);
+    -->
+    <select id="selectBidInfoListByLoanId" resultType="java.util.Map">
       select
         bi.bid_time bidTime,
         bi.bid_money bidMoney,
+        bi.loan_id loanId,
         u.phone
-        from b_bid_info bi, u_user u where bi.loan_id = #{loanId} and u.id = bi.uid order by bi.bid_money desc
+        from b_bid_info bi, u_user u where bi.loan_id = #{loanId} and u.id = bi.uid order by bi.bid_money desc limit #{pageIndex},#{pageSize}
+    </select>
+
+    <!-- List<Map<String, Object>> selectBidInfoListRecent(Integer uid);-->
+    <select id="selectBidInfoListRecent" resultType="java.util.Map">
+      select
+      li.product_name productName,
+      bi.bid_money bidMoney,
+      bi.bid_time bidTime
+      from b_bid_info bi , b_loan_info li
+      where li.id = bi.loan_id  and  bi.uid = #{uid}
+      order by bid_time desc limit 0,5
+    </select>
+
+    <!--List<Map<String,Object>> selectBidInfoListByUid(@Param("id") Integer id,@Param("pageNoIndex") int pageNoIndex,@Param("pageSize") Integer pageSize);-->
+    <select id="selectBidInfoListByUid" resultType="java.util.Map">
+        select
+        li.product_name productName,
+        bi.bid_money bidMoney,
+        bi.bid_time bidTime,
+        bi.bid_status bidStatus
+        from b_bid_info bi , b_loan_info li
+        where li.id = bi.loan_id and bi.uid = #{id}
+        order by bid_time desc limit #{pageNoIndex},#{pageSize}
+    </select>
+
+    <!--Long findBidInfoCount(Integer uid);-->
+    <select id="findBidInfoCount" resultType="long">
+        select count(*) from b_bid_info where uid=#{uid}
     </select>
 
 </mapper>

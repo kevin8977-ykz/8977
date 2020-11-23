@@ -27,4 +27,6 @@ public interface FinanceAccountMapper {
     int updateByPrimaryKeySelective(FinanceAccount record);
 
     int updateByPrimaryKey(FinanceAccount record);
+
+    FinanceAccount selectByUid(Integer id);
 }

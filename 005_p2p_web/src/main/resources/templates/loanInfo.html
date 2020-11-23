@@ -16,6 +16,7 @@
 <div id="header">
 <!--<jsp:include page="commons/header.jsp"/>-->
     <div th:include="commons/header :: html"></div>
+    <div th:include="commons/basepath :: html"></div>
 </div>
 
 <!--散标投资 begin-->
@@ -89,37 +90,56 @@
 		<dt>
 			<span class="record-num">序号</span><span class="invest-user">投资人</span><span class="invest-money">投资金额(元)</span><span class="invest-time">投资时间</span>
 		</dt>
-            <div th:if="${bidInfoList == null}">
+            <div th:if="${bidInfo == 1}">
                 <!-- 如果投资记录为空，显示以下文字 -->
                 <dd style="text-align:center;">该产品暂时还没有人投资，赶快去投资吧~</dd>
             </div>
 
-            <div th:if="${bidInfoList != null}">
+            <div th:if="${bidInfo != 1} ">
 		<!-- 如果有投资记录，循环遍历显示 -->
             <div th:each="bidInfo:${bidInfoList}">
                 <dd>
                     <span class="record-num" th:text="${bidInfoStat.count}">1</span>
-                    <span class="invest-user" th:text="${bidInfo.phone}">137******89</span>
+                    <span class="invest-user" th:text="|${#strings.substring(bidInfo.phone,0,3)}*****${#strings.substring(bidInfo.phone,8,11)}|">137******89</span>
                     <span class="invest-money" th:text="${#numbers.formatCurrency(bidInfo.bidMoney)}">1000.0</span>
-                    <span class="invest-time" th:text="${bidInfo.bidTime}">2017-09-12 13:34:22</span>
+                    <span class="invest-time" th:text="${#dates.format(bidInfo.bidTime , 'yyyy-MM-dd hh:mm:ss')}">2017-09-12 13:34:22</span>
                 </dd>
             </div>
             </div>
 
+            <div  th:if="${bidInfo != 1}">
             <!--页码 start-->
             <table class="page_bar">
                 <tbody>
                 <tr>
                     <td>
-                        共20条3页　当前为第2页　
+                       <!-- 共20条3页　当前为第2页　
                         <a id="linkHomePage" th:href="@{/loan/loan}">首页</a>
                         <a id="linkPreviousPage" th:href="@{/loan/loan}">上一页</a>
                         <a id="linkNextPage" th:href="@{/loan/loan}">下一页 </a>
-                        <a id="linkLastPage" th:href="@{/loan/loan}">尾页</a>
+                        <a id="linkLastPage" th:href="@{/loan/loan}">尾页</a>-->
+                        <span th:text="|共${totalCount}条&nbsp;&nbsp;${totalPages}页&nbsp;&nbsp;&nbsp;　当前为第${pageNo}页　|"></span>
+                        <a id="linkHomePage" th:href="@{/loan/loanInfo(id=${bidInfoList[0].loanId})}">首页</a>
+                        <span th:switch="${pageNo}">
+                    <span th:case="${1}">
+                        上一页
+                    </span>
+                    <span th:case="*">
+                        <a id="linkPreviousPage" th:href="@{/loan/loanInfo(id=${bidInfoList[0].loanId},pageNo=${pageNo - 1})}">上一页</a>
+                    </span>
+                </span>
+                        <span th:if="${pageNo == totalPages}">
+                    下一页
+                </span>
+                        <span th:if="${pageNo != totalPages}">
+                        <a id="linkNextPage" th:href="@{/loan/loanInfo(id=${bidInfoList[0].loanId},pageNo=${pageNo + 1})}">下一页 </a>
+                </span>
+                        <a id="linkLastPage" th:href="@{/loan/loanInfo(id=${bidInfoList[0].loanId},pageNo=${totalPages})}">尾页</a>
                     </td>
                 </tr>
                 </tbody>
             </table>
+            </div>
             <!--页码 end-->
 
 		</dl>
@@ -140,22 +160,24 @@
           <dl class="usable">
             <dt>我的账户可用</dt>
             <dd>资金(元)：
-            
+                    <div th:if="${#strings.isEmpty(session.user) }">
 	            	<!-- 判断用户是否登录：未登录，显示登录连接 -->
-	            	<span style="font-size:18px;color:#ff6161;vertical-align:bottom;"><a th:href="@{/loan/page/login}">请登录</a></span>
-	        
+	            	<span style="font-size:18px;color:#ff6161;vertical-align:bottom;"><a style="color: blueviolet" th:href="@{/loan/page/login}">请登录</a></span>
+                    </div>
+                    <div th:unless="${#strings.isEmpty(session.user)}">
 	            	<!-- 判断用户是否登录：已登录，显示可用余额 -->
-	           		<!--<span style="font-size:18px;color:#ff6161;vertical-align:bottom;">1,000,12 元</span>-->
-	        
+	           		<span style="font-size:18px;color:#ff6161;vertical-align:bottom;" th:text="|${#numbers.formatCurrency(financeAccount.availableMoney)}元|">1,000,12 元</span>
+                    </div>
             </dd>
           </dl>
           <div class="expect-box">
             <div class="expect-money">预计本息收入(元)：<span id="shouyi" class="money"></span><span class="prompt" style="display:block;">请在下方输入投资金额</span></div>
-            <input type="text" id="bidMoney" name="bidMoney" onblur="checkMoney();" placeholder="请输入投资金额，应为100元的整倍数" maxlength="9"/>
+            <input type="text" id="bidMoney" name="bidMoney"  placeholder="请输入投资金额，应为100元的整倍数" maxlength="9"/>
+              <span  style="color:red;font-size:12px;width:222px;margin-top:10px;margin-bottom:10px;line-height:18px;" id="msg"></span>
             <div class="max-invest-money"></div>
           </div>
           <div class="invest-btn">
-          	<a id="investNow" href="javascript:void(0)" class="btn-1" onclick="invest();">立即投资</a>
+          	<a id="investNow" href="javascript:void(0)" class="btn-1">立即投资</a>
           </div>
           <input type="hidden" id="loanId" name="loanId" value="${loanInfo.id}"/>
         </div>
@@ -179,11 +201,130 @@
 </div>
 <!--投资成功浮层end-->
 
+<!--隐藏域-->
+<div th:if="${not #strings.isEmpty(session.user)}">
+    <input type="hidden" id="user" th:value="${session.user}"/>
+    <input type="hidden" id="userName" th:value="${session.user.name}"/>
+    <input type="hidden" id="availableMoney" th:value="${financeAccount.availableMoney}"/>
+</div>
+
 <!--页脚start-->
-<jsp:include page="commons/footer.jsp"/>
+<!--<jsp:include page="commons/footer.jsp"/>-->
+<div th:include="commons/footer :: html"></div>
 <!--页脚end-->
 
 <script type="text/javascript">
+    $(function () {
+
+        //1.给输入框绑定失去焦点事件
+        $("#bidMoney").blur(function () {
+            //获取投资金额
+            var bidMoney = $.trim($("#bidMoney").val());
+
+            //获取最低可投资金额
+            var bidMinLimit = [[${loanInfo.bidMinLimit}]];
+            //获取最高可投金额
+            var bidMaxLimit = [[${loanInfo.bidMaxLimit}]];
+            //获取剩余可投金额
+            var leftProductMoney = [[${loanInfo.leftProductMoney}]];
+            //获取账户可用余额
+            var availableMoney = $("#availableMoney").val();
+            if(availableMoney === ""){
+                availableMoney = 0;
+            }
+
+            //获取产品类型
+            var productType = [[${loanInfo.productType}]];
+            //获取利率
+            var rate = [[${loanInfo.rate}]];
+            //获取投资周期
+            var cycle = [[${loanInfo.cycle}]];
+
+            //1.校验
+            if(bidMoney === ""){
+                //非空
+                $("#msg").html("请输入您要投资的金额!")
+            }else if(!/^[1-9]\d*$/.test(bidMoney)){
+                //必须为正整数
+                $("#msg").html("投资金额必须为正整数!")
+            }else if (!(Number(bidMoney) % Number(bidMinLimit) === 0)){
+                //输入的数字必须为最低投资金额的整数倍
+                //将最低金额存入到隐藏域中
+                //使用内敛脚本获取
+                //如果使用内敛脚本获取,如果表达式中出现了错误,后面的所有代码不被加载
+                $("#msg").html("投资金额必须为最低金额:"+ bidMinLimit+"的整数位")
+            }else if (Number(bidMoney) > Number(bidMaxLimit)){
+                //输入的数字不能超过最高投资金额
+                $("#msg").html("投资金额必须为不能超过:"+bidMaxLimit+"元");
+            }else if (Number(bidMoney) > Number(leftProductMoney)){
+                //输入的数字不能超过剩余可投金额
+                $("#msg").html("投资金额不能超过剩余可投金额");
+            }else if(Number(bidMoney) > Number(availableMoney)){
+                //输入的数字不能超过账户可用余额
+                $("#msg").html("余额不足,请前去充值");
+            }else {
+                $("#msg").html("");
+                //校验通过.
+                //计算预计的收益
+                var money = 0;
+                if(productType === 0){
+                    //新手宝,按天计息
+                    //投资金额 * (年利率/365) * 天期 = 收益利息
+                    money = Math.round((bidMoney * (rate / 100 / 365) * cycle) * 100 ) / 100;
+                }else {
+                    //优选 散标 按月计息
+                    //投资金额 * (年利率/12) * 月周期 = 收益利息
+                    money = Math.round((bidMoney * (rate / 100 / 12) * cycle) * 100 ) / 100;
+                }
+                //显示预计收益
+                $("#shouyi").html(money+"元");
+            }
+        });
+        $("#investNow").click(function () {
+            var bidMoney = $.trim($("#bidMoney").val());
+            //点击立即登录按钮
+            //需要校验是否登录以及是否实名认证
+            var user = $("#user").val();
+            if(user === undefined){
+                $("#msg").html("当前用户未登录,请前去登录")
+            }else {
+                //验证实名认证
+                var username = $("#userName").val();
+                if (username === undefined){
+                    //没有实名认证
+                    $("#msg").html("当前用户未实名认证,请去认证")
+                }else {
+                    //已实名认证
+                    //可以投资,发送ajax请求
+                    //前台参数:产品唯一标识,投资金额
+                    //业务逻辑:投资,会在 b_bid_info 投资记录表中新增一条数据
+                    //账户余额,减去投资的金额
+                    //产品剩余可投金额减去投资的金额
+                    //收益内容放在后面实现,根据产品状态为已满标时,生成收益计划
+                    $.ajax({
+                        url:basepath + "/loan/invest",
+                        data:{
+                            "loanId":[[${loanInfo.id}]],
+                            "bidMoney":bidMoney
+                        },
+                        type:"post",
+                        dataType:"json",
+                        success:function (data) {
+                            if(data.success){
+                                location = basepath + "/loan/page/toMyCenter"
+                            }
+                        },
+                        error:function () {
+                            alert("网络异常,请稍后再试!")
+                        }
+                    })
+
+                }
+            }
+        });
+
+    });
+
 function closeit() {
 	$("#failurePayment").hide();
 	$("#dialog-overlay1").hide();

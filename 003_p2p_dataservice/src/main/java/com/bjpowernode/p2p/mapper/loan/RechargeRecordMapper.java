@@ -27,4 +27,11 @@ public interface RechargeRecordMapper {
     int updateByPrimaryKeySelective(RechargeRecord record);
 
     int updateByPrimaryKey(RechargeRecord record);
+
+    //根据用户id查询最近5条充值记录
+    List<RechargeRecord> selectRechargeRecordListRecent(Integer uid);
+
+    List<RechargeRecord> selectRechargeRecordListByUid(@Param("uid") Integer uid,
+                                                       @Param("pageNo") int pageNoIndex,
+                                                       @Param("pageSize") Integer pageSize);
 }

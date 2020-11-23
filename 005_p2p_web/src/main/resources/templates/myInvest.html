@@ -44,6 +44,7 @@
 <!--页头start-->
 <div id="header">
     <div th:include="commons/header :: html"></div>
+    <div th:include="commons/basepath :: html"></div>
 </div>
 <!--页头end-->
 
@@ -59,7 +60,7 @@
 	            <div th:include="commons/leftNav :: html"></div>
             </div>
             <div class="right-body">
-                <div class="right-wap">
+                <span class="right-wap">
                     <div class="deal-data">
                         <dl>
                             <dt>
@@ -68,74 +69,53 @@
                                 <span class="deal-type" style="width:120px">投资状态</span>
                                 <span class="deal-money">投资金额(元)</span>
                             </dt>
+                            <div th:each="bid:${bidInfoList}">
                             <dd>
-                                <div class="deal-time">2016-01-03 12:23:32</div>
-                                <div class="deal-name">新手宝</div>
-                                <div class="deal-type" style="width:120px">
-                                    <!-- 判断投资状态是否为1，即成功 -->
+                                <div class="deal-time" th:text="${#dates.format(bid.bidTime,'yyyy-MM-dd hh:mm:ss')}">2016-01-03 12:23:32</div>
+                                <div class="deal-name" th:text="${bid.productName}">新手宝</div>
+                               <span th:if="${bid.bidStatus == '1'}">
+                                <div class="deal-type" style="width:120px" >
+                                     <!--判断投资状态是否为1，即成功 -->
                                     投资成功
-                                </div>
-                                <div class="deal-money">100.0</div>
+                               </div>
+                                </span>
+                                <span th:if="${bid.bidStatus != '1'}">
+                                <div class="deal-type" style="width:120px" >
+                                     <!--判断投资状态是否为1，即成功 -->
+                                    投资失败
+                               </div>
+                                </span>
+                                <div class="deal-money" th:text="${bid.bidMoney}">100.0</div>
                             </dd>
-                            <dd>
-                                <div class="deal-time">2016-01-03 12:23:32</div>
-                                <div class="deal-name">新手宝</div>
-                                <div class="deal-type" style="width:120px">
-                                    <!-- 判断投资状态是否为1，即成功 -->
-                                    投资成功
-                                </div>
-                                <div class="deal-money">100.0</div>
-                            </dd>
-                            <dd>
-                                <div class="deal-time">2016-01-03 12:23:32</div>
-                                <div class="deal-name">新手宝</div>
-                                <div class="deal-type" style="width:120px">
-                                    <!-- 判断投资状态是否为1，即成功 -->
-                                    投资成功
-                                </div>
-                                <div class="deal-money">100.0</div>
-                            </dd>
-                            <dd>
-                                <div class="deal-time">2016-01-03 12:23:32</div>
-                                <div class="deal-name">新手宝</div>
-                                <div class="deal-type" style="width:120px">
-                                    <!-- 判断投资状态是否为1，即成功 -->
-                                    投资成功
-                                </div>
-                                <div class="deal-money">100.0</div>
-                            </dd>
-                            <dd>
-                                <div class="deal-time">2016-01-03 12:23:32</div>
-                                <div class="deal-name">新手宝</div>
-                                <div class="deal-type" style="width:120px">
-                                    <!-- 判断投资状态是否为1，即成功 -->
-                                    投资成功
-                                </div>
-                                <div class="deal-money">100.0</div>
-                            </dd>
-                            <dd>
-                                <div class="deal-time">2016-01-03 12:23:32</div>
-                                <div class="deal-name">新手宝</div>
-                                <div class="deal-type" style="width:120px">
-                                    <!-- 判断投资状态是否为1，即成功 -->
-                                    投资成功
-                                </div>
-                                <div class="deal-money">100.0</div>
-                            </dd>
-                            &nbsp;&nbsp;
-
-                            <div class="touzi_fenye" style="width:100%;text-align:center;">
-                                共20条3页　当前为第 1 页
-                                <a id="linkHomePage" th:href="@{/loan/myInvest}">首页</a>
-                                <a id="linkPreviousPage"
-                                   th:href="@{/loan/myInvest}">上一页</a>
-                                <a id="linkNextPage"
-                                   th:href="@{/loan/myInvest}">下一页 </a>
-                                <a id="linkLastPage"
-                                   th:href="@{/loan/myInvest}">尾页</a>
                             </div>
 
+
+                            &nbsp;&nbsp;
+                            <div class="touzi_fenye" style="width:100%;text-align:center;">
+                            <span  th:text="|共${totalCount}条 ${totalPages}页　当前为第 ${pageNo} 页|"> </span>
+
+                                <a id="linkHomePage" th:href="@{/loan/page/myInvest}">首页</a>
+                                <span th:switch="${pageNo}">
+                                    <span th:case="${1}">
+                                            上一页
+                                   </span>
+                                    <span th:case="*">
+                                         <a id="linkPreviousPage" th:href="@{/loan/page/myInvest/(pageNo=${pageNo - 1})}">上一页</a>
+                                    </span>
+                                </span>
+                                    <span th:if="${pageNo == totalPages}">
+                                            下一页
+                                   </span>
+                                    <span th:if="${pageNo != totalPages}">
+                                         <a id="linkNextPage" th:href="@{/loan/page/myInvest/(pageNo=${pageNo + 1})}">下一页</a>
+                                    </span>
+
+                                <a id="linkLastPage"
+                                   th:href="@{/loan/page/myInvest/(pageNo=${totalPages})}">尾页</a>
+                           </div>
+
                         </dl>
+
                     </div>
                 </div>
             </div>

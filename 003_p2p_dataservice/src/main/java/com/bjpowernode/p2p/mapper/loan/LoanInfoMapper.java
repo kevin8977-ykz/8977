@@ -35,4 +35,14 @@ public interface LoanInfoMapper {
                                                    @Param("pageNo") int pageNoIndex,
                                                    @Param("pageSize") int pageSize);
 
+    /**
+     *   通过version字段进行数据库乐观锁控制,防止超卖现象发生
+     * @param loanId
+     * @param bidMoney
+     * @param version
+     * @return
+     */
+    int update(@Param("loanId") Integer loanId,
+               @Param("bidMoney") Double bidMoney,
+               @Param("version") Integer version);
 }

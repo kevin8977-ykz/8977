@@ -380,4 +380,13 @@
         select * from b_loan_info where product_type=#{productType} order by release_time desc  limit #{pageNo},#{pageSize}
     </select>
 
+    <!-- int update(@Param("loanId") Integer loanId,
+               @Param("leftProductMoney") Double leftProductMoney,
+               @Param("bidMoney") Double bidMoney,
+               @Param("version") Integer version);-->
+    <update id="update"   >
+    update b_loan_info set left_product_money = left_product_money - #{bidMoney} , version = #{version} + 1
+    where id=#{loanId} and version =#{version} and left_product_money  - #{bidMoney} >= 0
+    </update>
+
 </mapper>

@@ -179,4 +179,10 @@
       available_money = #{availableMoney,jdbcType=DOUBLE}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+    <!--FinanceAccount selectByUid(Integer id);-->
+    <select id="selectByUid" resultMap="BaseResultMap">
+        select * from u_finance_account where uid=#{id}
+    </select>
+
 </mapper>

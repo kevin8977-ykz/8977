@@ -4,15 +4,37 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script  th:inline="javascript">
-            var basepath =  [[${#request.scheme}]] + "://"+
+        //http://localhost:8080/p2p
+      var basepath =  [[${#request.scheme}]] + "://"+
                             [[${#request.serverName}]] + ":"  +
                             [[${#request.serverPort}]] +
                             [[${#request.contextPath}]];
 
+        //http://localhost:8080/p2p+路径+参数
 
+        //获取地址栏的地址：
+        //requestURI ： /p2p/loan/loan
+        //requestURL : http://localhost:8080/p2p/loan/loan
+
+        //获取地址栏中参数
+        //路径中带有参数的
+        //queryString : pType=1
+        //路径中不带参数的
+        //queryString : null
+
+        //#request.requestURL + "?" + #request.queryString
+        //获取的不带参数的地址： http://localhost:8080/p2p/?null 不影响使用
+        //获取带有参数的地址： http://localhost:8080/p2p/loan/loan?pType=1
+
+       var rUri = [[${
+            #request.requestURL + "?" + #request.queryString}
+            ]]
+
+    //alert(uri)
     </script>
 </head>
 <body>
-
+    <!--隐藏域：负责存储跳转的url-->
+    <input type="hidden" id="returnUrl" th:value="${#strings.replace(returnUrl,'?null','')}">
 </body>
 </html>

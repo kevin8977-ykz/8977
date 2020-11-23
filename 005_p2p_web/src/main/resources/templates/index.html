@@ -13,13 +13,28 @@
     <script type="text/javascript" th:src="@{/js/jquery.nivo.slider.pack.js}"></script>
     <script type="text/javascript" th:src="@{/js/trafficStatistics.js}"></script>
     <style type="text/css">body{background:#f2f2f2;}</style>
+    <script type="text/javascript">
+     /*   $(function () {
+            //点击登录按钮，跳转到登录页面，并且携带返回页面的地址
+            $("#loginPageBtn2").click(function () {
+
+                //alert(ruri)
+                //跳转到登录页面
+                //获取returnUrl
+                location = basepath + "/loan/page/login?returnUrl=" + ruri;
+
+            });
+        })*/
+    </script>
 </head>
+
 <body>
 <!-- 页头start -->
 <div id="header">
     <!--<jsp:include page="commons/header.html"/>-->
     <!--引入公共页面资源：类似<jsp:include/>-->
     <div th:include="commons/header :: html"></div>
+    <div th:include="commons/basepath :: html"></div>
 </div>
 
 <!--轮播图start-->
@@ -32,19 +47,22 @@
 
     <div class="registerBody">
         <div class="register-bg"></div>
-        <!-- 未登录状态 -->
-        <div class="register">
-            <h3>动力金融网历史年化收益率</h3>
-            <h4><span id="avg" th:text="${historyAverageRate}">13.8</span> %</h4>
-            <div class="bn_register"><a th:href="@{/loan/page/register}" class="btn-1">注册领888大红包</a></div>
-            <div class="login">有账号? <a th:href="@{/loan/page/login}">立即登录</a></div>
+        <div th:if="${session.user eq null}">
+            <!-- 未登录状态 -->
+            <div class="register">
+                <h3>动力金融网历史年化收益率</h3>
+                <h4><span id="avg" th:text="${historyAverageRate}">13.8</span> %</h4>
+                <div class="bn_register"><a th:href="@{/loan/page/register}" class="btn-1">注册领888大红包</a></div>
+                <div class="login">有账号? <a th:href="@{/loan/page/login}">立即登录</a></div>
+            </div>
         </div>
-        <!-- 登录状态
+        <div th:unless="${session.user eq null}">
+         <!--登录状态-->
         <div class="register welcome">
-            <div class="welcome-txt">欢迎 <span>“<b>张三</b>”</span><br/>来动力金融网投资！</div>
-            <div class="bn_register"><a th:href="@{/loan/myCenter}" class="btn-1">进入我的小金库</a></div>
+            <div class="welcome-txt">欢迎 <span>“<b th:text="${session.user.getName()}">张三</b>”</span><br/>来动力金融网投资！</div>
+            <div class="bn_register"><a th:href="@{/loan/page/toMyCenter}" class="btn-1">进入我的小金库</a></div>
         </div>
-        -->
+        </div>
     </div>
 </div>
 <!--轮播图end-->

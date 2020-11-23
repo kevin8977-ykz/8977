@@ -16,4 +16,13 @@ public interface UserService {
     User register(String phone, String loginPassword);
 
 
+    User updateRegisteData(Integer id, String realName, String idCard);
+
+    /**
+     * 根据手机号和密码查询用户
+     * @param phone
+     * @param loginPassword
+     * @return
+     */
+    User login(String phone, String loginPassword);
 }

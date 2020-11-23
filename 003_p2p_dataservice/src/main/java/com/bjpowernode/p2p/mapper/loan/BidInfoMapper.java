@@ -33,5 +33,14 @@ public interface BidInfoMapper {
     Double selectTotalBidMoney();
 
     //根据产品ID,查询给产品的投资金额、投资时间、用户的手机号码
-    List<Map<String, Object>> selectBidInfoListByLoanId(Integer loanId);
+    List<Map<String, Object>> selectBidInfoListByLoanId(@Param("loanId") Integer loanId,
+                                                        @Param("pageIndex") Integer pageIndex,
+                                                        @Param("pageSize") Integer pageSize);
+
+    //根据用户id，查询最近5条投资记录
+    List<Map<String, Object>> selectBidInfoListRecent(Integer uid);
+
+    List<Map<String,Object>> selectBidInfoListByUid(@Param("id") Integer id,@Param("pageNoIndex") int pageNoIndex,@Param("pageSize") Integer pageSize);
+
+    Long findBidInfoCount(Integer uid);
 }

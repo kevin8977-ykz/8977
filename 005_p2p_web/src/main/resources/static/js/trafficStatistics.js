@@ -86,9 +86,27 @@ $(function(){
 	});
 	//个人信息下拉
 	$(".logged").hover(function(){
+	    //添加查询用户的余额的业务逻辑
+        $.ajax({
+            url:basepath + "/loan/getAvailableMoney",
+            type:"post",
+            dataType:"json",
+            success:function (data) {
+                if (data.success){
+                    if (data.data == null){
+                        $("#frame_top").html(0);
+                    }else {
+                        var data = data.data.availableMoney;
+                        $("#frame_top").html(data);
+                    }
+                }else {
+                    $("#frame_top").html("网络异常，请稍后再试");
+                }
+            }
+        });
 		$(this).addClass("logged-hover");
 		$(".userinfo-drop-down",this).stop().animate({ height: '205px'},300);
-	},function(){
+	},function(){       +
 		$(".userinfo-drop-down",this).stop().animate({ height: '0px'},300,function(){$(".logged").removeClass("logged-hover");});
 	});
 	//二维码弹出层显示隐藏

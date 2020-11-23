@@ -2,7 +2,10 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/BidInfoMapper.xml" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/IncomeRecordMapper.xml" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/LoanInfoMapper.xml" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/RechargeRecordMapper.xml" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/user/FinanceAccountMapper.xml" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/user/UserMapper.xml" dialect="GenericSQL" />
   </component>
 </project>

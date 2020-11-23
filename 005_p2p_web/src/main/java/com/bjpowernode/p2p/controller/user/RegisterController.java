@@ -4,10 +4,12 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.fastjson.JSON;
 import com.aliyuncs.dysmsapi.model.v20170525.SendSmsResponse;
 import com.aliyuncs.exceptions.ClientException;
+import com.bjpowernode.p2p.entity.BaseResult;
 import com.bjpowernode.p2p.model.user.User;
 import com.bjpowernode.p2p.service.user.RegisterService;
 import com.bjpowernode.p2p.service.user.UserService;
 import com.bjpowernode.p2p.utils.MessageCode;
+import com.bjpowernode.p2p.utils.RealNameIdCardApi;
 import com.bjpowernode.p2p.utils.SmsUtil;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -30,6 +32,55 @@ public class RegisterController {
 
     @Reference(interfaceClass = RegisterService.class,version = "1.0.0",timeout = 2000,check = false)
     private RegisterService registerService;
+
+
+
+    @RequestMapping("/realName")
+    @ResponseBody
+    public BaseResult realName(@RequestParam Map<String,String> param,HttpSession session){
+    //public Map<String,Object> realName(String phone,String realName,String idCard,String messageCode){
+
+        //从map集合中提取参数
+        String phone = param.get("phone");
+        String realName = param.get("realName");
+        String idCard = param.get("idCard");
+        String messageCode = param.get("messageCode");
+
+        //匹配验证码匹配
+        String messageCodeInRedis = registerService.getMessageCodeInRedis(phone);
+
+        //匹配
+        if (!StringUtils.equals(messageCode,messageCodeInRedis)){
+            /*return new HashMap<String, Object>(){{
+                put("success",false);
+                put("msg","验证码输入错误，请重新输入");
+            }};*/
+           return BaseResult.error("验证码输入错误，请重新输入");
+        }
+        //TODO 身份证二要素认证
+        //调用封装好的工具类
+        boolean flag = RealNameIdCardApi.check( idCard, realName);
+
+        if(flag){
+            //认证通过
+            //获取登录的用户id 用来存入数据
+            User user = (User) session.getAttribute("user");
+            //将身份信息存入到数据库中
+            User updateUser = userService.updateRegisteData(user.getId(),realName,idCard);
+
+            //更新session中的用户信息
+            session.removeAttribute("user");
+            session.setAttribute("user",updateUser);
+
+            return BaseResult.success("实名认证校验通过");
+        }
+
+
+        return BaseResult.error("实名认证校验失败");
+    }
+
+
+
 
 
     @RequestMapping("/page/realName")

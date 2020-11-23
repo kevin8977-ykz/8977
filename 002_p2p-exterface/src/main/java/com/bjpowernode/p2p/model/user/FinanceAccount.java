@@ -3,6 +3,7 @@ package com.bjpowernode.p2p.model.user;
 import java.io.Serializable;
 
 public class FinanceAccount implements Serializable {
+
     private Integer id;
 
     private Integer uid;
@@ -17,6 +18,7 @@ public class FinanceAccount implements Serializable {
                 ", availableMoney=" + availableMoney +
                 '}';
     }
+
 
     public Integer getId() {
         return id;

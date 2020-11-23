@@ -24,6 +24,7 @@
 <!--页头start-->
 <div id="header">
     <div th:include="commons/header :: html"></div>
+    <div th:include="commons/basepath :: html"></div>
 </div>
 <!--页头end-->
 
@@ -49,14 +50,22 @@
                                 <span class="deal-money">投资金额(元)</span>
                                 <span class="deal-balance">收益状态</span>
                             </dt>
+                            <div th:each="in:${incomeRecordList}">
                             <dd>
-                                <div class="deal-time">2017-02-01 12:12:33</div>
-                                <div class="deal-name">23.89</div>
-                                <div class="deal-type" style="width:120px">季度宝</div>
-                                <div class="deal-money">1000.0</div>
-                                <div class="deal-balance">收益已返</div>
+                                <div class="deal-time" th:text="${#dates.format(in.incomeDate,'yyyy-MM-dd hh:mm:ss')}">2017-02-01 12:12:33</div>
+                                <div class="deal-name" th:text="${in.incomeMoney}">23.89</div>
+                                <div class="deal-type" style="width:120px" th:text="${in.productName}">季度宝</div>
+                                <div class="deal-money" th:text="${in.bidMoney}">1000.0</div>
+                                <span th:if="${in.incomeStatus == 1}">
+                                    <div class="deal-balance">收益已返</div>
+                                </span>
+                                <span th:if="${in.incomeStatus == 0}">
+                                    <div class="deal-balance">收益未返</div>
+                                </span>
+
                             </dd>
-                            <dd>
+                            </div>
+                            <!--<dd>
                                 <div class="deal-time">2017-02-01 12:12:33</div>
                                 <div class="deal-name">23.89</div>
                                 <div class="deal-type" style="width:120px">季度宝</div>
@@ -90,18 +99,29 @@
                                 <div class="deal-type" style="width:120px">新手宝</div>
                                 <div class="deal-money">10000.0</div>
                                 <div class="deal-balance">收益未返</div>
-                            </dd>
+                            </dd>-->
                             &nbsp;&nbsp;
                             <div class="touzi_fenye" style="width:100%;text-align:center;">
-                                共21条3页　当前为第2页
-                                <a id="linkHomePage"
-                                   th:href="@{/loan/myIncome}">首页</a>
-                                <a id="linkPreviousPage"
-                                   th:href="@{/loan/myIncome}">上一页</a>
-                                <a id="linkNextPage"
-                                   th:href="@{/loan/myIncome}">下一页 </a>
+                                <span  th:text="|共${totalCount}条 ${totalPages}页　当前为第 ${pageNo} 页|"> </span>
+
+                                <a id="linkHomePage" th:href="@{/loan/page/myIncome}">首页</a>
+                                <span th:switch="${pageNo}">
+                                    <span th:case="${1}">
+                                            上一页
+                                   </span>
+                                    <span th:case="*">
+                                         <a id="linkPreviousPage" th:href="@{/loan/page/myIncome/(pageNo=${pageNo - 1})}">上一页</a>
+                                    </span>
+                                </span>
+                                <span th:if="${pageNo == totalPages}">
+                                            下一页
+                                   </span>
+                                <span th:if="${pageNo != totalPages}">
+                                         <a id="linkNextPage" th:href="@{/loan/page/myIncome/(pageNo=${pageNo + 1})}">下一页</a>
+                                    </span>
+
                                 <a id="linkLastPage"
-                                   th:href="@{/loan/myIncome}">尾页</a>
+                                   th:href="@{/loan/page/myIncome/(pageNo=${totalPages})}">尾页</a>
                             </div>
                         </dl>
                     </div>

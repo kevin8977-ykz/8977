@@ -1,4 +1,4 @@
-package com.bjpowernode.p2p;
+package com.bjpowernode.p2p.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.bjpowernode.p2p.model.loan.LoanInfo;

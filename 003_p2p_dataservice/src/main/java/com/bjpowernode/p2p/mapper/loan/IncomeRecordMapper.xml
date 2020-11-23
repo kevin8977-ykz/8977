@@ -256,4 +256,35 @@
       income_status = #{incomeStatus,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+    <!--List<Map<String, Object>> selectIncomeRecordListRecent(Integer uid);-->
+    <select id="selectIncomeRecordListRecent" resultType="java.util.Map">
+        select
+        li.product_name productName,
+        ir.income_money incomeMoney,
+        ir.income_date incomeDate
+        from b_income_record ir
+        inner join  b_loan_info li
+        on ir.loan_id = li.id and ir.uid = #{uid}
+        order by income_date desc limit 0,5
+    </select>
+
+
+    <!--List<Map<String, Object>> selectIncomeRecordListByUid(@Param("uid") Integer uid,
+                                                          @Param("pageNo") int pageNo,
+                                                          @Param("pageSize") Integer pageSize);-->
+    <select id="selectIncomeRecordListByUid" resultType="java.util.Map">
+        select
+        li.product_name productName,
+        bir.income_date incomeDate,
+        bir.income_money incomeMoney,
+        bir.bid_money bidMoney,
+        bir.income_status incomeStatus
+        from b_income_record bir
+        inner join b_loan_info li
+        on bir.loan_id = li.id and bir.uid = #{uid}
+        order by income_date desc limit #{pageNo},#{pageSize}
+    </select>
+
+
 </mapper>
