@@ -40,4 +40,7 @@ public interface IncomeRecordMapper {
     List<Map<String, Object>> selectIncomeRecordListByUid(@Param("uid") Integer uid,
                                                           @Param("pageNo") int pageNo,
                                                           @Param("pageSize") Integer pageSize);
+
+    List<IncomeRecord> selectIncomeRecordListByIncomeStatus();
+
 }

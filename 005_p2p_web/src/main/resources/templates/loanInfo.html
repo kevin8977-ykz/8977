@@ -280,46 +280,53 @@
                 $("#shouyi").html(money+"元");
             }
         });
+
+
         $("#investNow").click(function () {
             var bidMoney = $.trim($("#bidMoney").val());
             //点击立即登录按钮
             //需要校验是否登录以及是否实名认证
             var user = $("#user").val();
-            if(user === undefined){
-                $("#msg").html("当前用户未登录,请前去登录")
-            }else {
-                //验证实名认证
-                var username = $("#userName").val();
-                if (username === undefined){
-                    //没有实名认证
-                    $("#msg").html("当前用户未实名认证,请去认证")
+            var msg = $("#msg").text();
+            if(msg === ""){
+                if(user === undefined){
+                    $("#msg").html("当前用户未登录,请前去登录")
                 }else {
-                    //已实名认证
-                    //可以投资,发送ajax请求
-                    //前台参数:产品唯一标识,投资金额
-                    //业务逻辑:投资,会在 b_bid_info 投资记录表中新增一条数据
-                    //账户余额,减去投资的金额
-                    //产品剩余可投金额减去投资的金额
-                    //收益内容放在后面实现,根据产品状态为已满标时,生成收益计划
-                    $.ajax({
-                        url:basepath + "/loan/invest",
-                        data:{
-                            "loanId":[[${loanInfo.id}]],
-                            "bidMoney":bidMoney
-                        },
-                        type:"post",
-                        dataType:"json",
-                        success:function (data) {
-                            if(data.success){
-                                location = basepath + "/loan/page/toMyCenter"
-                            }
-                        },
-                        error:function () {
-                            alert("网络异常,请稍后再试!")
-                        }
-                    })
+                    //验证实名认证
+                    var username = $("#userName").val();
+                    if (username === undefined){
+                        //没有实名认证
+                        $("#msg").html("当前用户未实名认证,请去认证")
 
-                }
+                    }else {
+                        //已实名认证
+                        //可以投资,发送ajax请求
+                        //前台参数:产品唯一标识,投资金额
+                        //业务逻辑:投资,会在 b_bid_info 投资记录表中新增一条数据
+                        //账户余额,减去投资的金额
+                        //产品剩余可投金额减去投资的金额
+                        //收益内容放在后面实现,根据产品状态为已满标时,生成收益计划
+                        $.ajax({
+                            url:basepath + "/loan/invest",
+                            data:{
+                                "loanId":[[${loanInfo.id}]],
+                                "bidMoney":bidMoney
+                            },
+                            type:"post",
+                            dataType:"json",
+                            success:function (data) {
+                                if(data.success){
+                                    location = basepath + "/loan/page/toMyCenter"
+                                }
+                            },
+                            error:function () {
+                                alert("网络异常,请稍后再试!")
+                            }
+                        })
+
+                    }
+            }
+
             }
         });
 

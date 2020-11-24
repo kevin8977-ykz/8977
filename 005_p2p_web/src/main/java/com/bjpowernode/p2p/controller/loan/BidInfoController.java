@@ -42,6 +42,7 @@ public class BidInfoController {
         bidInfoService.invest(loanId,bidMoney,user.getId());
 
 
+
         return BaseResult.success();
     }
 

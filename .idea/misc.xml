@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/003_p2p_dataservice/pom.xml" />
         <option value="$PROJECT_DIR$/004_p2p_common/pom.xml" />
         <option value="$PROJECT_DIR$/005_p2p_web/pom.xml" />
+        <option value="$PROJECT_DIR$/006-p2p-timer/pom.xml" />
       </list>
     </option>
   </component>

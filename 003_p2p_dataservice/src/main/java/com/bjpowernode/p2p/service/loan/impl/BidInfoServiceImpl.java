@@ -4,21 +4,22 @@ import com.alibaba.dubbo.config.annotation.Service;
 import com.bjpowernode.p2p.mapper.loan.BidInfoMapper;
 import com.bjpowernode.p2p.mapper.loan.LoanInfoMapper;
 import com.bjpowernode.p2p.mapper.user.FinanceAccountMapper;
+import com.bjpowernode.p2p.mapper.user.UserMapper;
 import com.bjpowernode.p2p.model.loan.BidInfo;
 import com.bjpowernode.p2p.model.loan.BidInfoExample;
 import com.bjpowernode.p2p.model.loan.LoanInfo;
 import com.bjpowernode.p2p.model.user.FinanceAccount;
 import com.bjpowernode.p2p.model.user.FinanceAccountExample;
+import com.bjpowernode.p2p.model.user.User;
 import com.bjpowernode.p2p.service.loan.BidInfoService;
 import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 @Component
@@ -36,6 +37,9 @@ public class BidInfoServiceImpl implements BidInfoService {
 
     @Autowired
     private FinanceAccountMapper financeAccountMapper;
+
+    @Autowired
+    private UserMapper userMapper;
 
     @Override
     public Double findTotalBidMoney() {
@@ -153,8 +157,30 @@ public class BidInfoServiceImpl implements BidInfoService {
             throw new RuntimeException("更新账户余额失败");
         }
         //处理投资排行榜'
+        User user = userMapper.selectByPrimaryKey(id);
+        if (ObjectUtils.isNotEmpty(user)){
+            redisTemplate.boundZSetOps("investTop").incrementScore(user.getPhone(),bidMoney);
+        }
 
+    }
 
+    @Override
+    public List<Map<String, Object>> findInvestTop() {
+        List<Map<String,Object>> resultList = new ArrayList<>();
+        //倒序获取投资排行榜
+        Set<ZSetOperations.TypedTuple<String>> investTop = redisTemplate.boundZSetOps("investTop").reverseRangeWithScores(0, 5);
+        for (ZSetOperations.TypedTuple<String> tuple : investTop) {
+            //手机号码
+            String value = tuple.getValue();
+            //投资总金额
+            Double score = tuple.getScore();
+
+            Map<String,Object> map = new HashMap<>();
+            map.put(value,score);
+
+            resultList.add(map);
+        }
+        return resultList;
     }
 
 

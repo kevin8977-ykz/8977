@@ -45,4 +45,7 @@ public interface LoanInfoMapper {
     int update(@Param("loanId") Integer loanId,
                @Param("bidMoney") Double bidMoney,
                @Param("version") Integer version);
+
+    List<LoanInfo> selectLoanInfoListByLeftProductMoneyAndProductStatus(@Param("leftProductMoney") double leftProductMoney,
+                                                                        @Param("productStatus") int productStatus);
 }

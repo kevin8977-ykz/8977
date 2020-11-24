@@ -60,6 +60,9 @@ public class LoanInfoController {
 
         model.addAttribute("pageNo",pageNo);
 
+        List<Map<String,Object>> investTop= bidInfoService.findInvestTop();
+        System.out.println("investTop:"+investTop);
+        model.addAttribute("investTop",investTop);
 
 
         return "loan";

@@ -22,4 +22,6 @@ public interface BidInfoService {
 
 
     void invest(Integer loanId, Double bidMoney, Integer id);
+
+    List<Map<String, Object>> findInvestTop();
 }

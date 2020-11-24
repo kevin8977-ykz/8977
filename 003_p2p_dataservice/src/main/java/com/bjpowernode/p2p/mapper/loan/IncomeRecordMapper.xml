@@ -286,5 +286,12 @@
         order by income_date desc limit #{pageNo},#{pageSize}
     </select>
 
+    <!--
+      List<IncomeRecord> selectIncomeRecordListByIncomeStatus(Integer incomeStatus);
+  -->
+    <select id="selectIncomeRecordListByIncomeStatus" resultMap="BaseResultMap">
+    select * from b_income_record where income_status = 0 and income_date = curDate()
+  </select>
+
 
 </mapper>

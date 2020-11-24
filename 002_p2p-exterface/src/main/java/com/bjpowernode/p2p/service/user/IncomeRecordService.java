@@ -23,4 +23,10 @@ public interface IncomeRecordService {
      * @return
      */
     List<Map<String, Object>> findIncomeRecordListByUid(Integer id, int pageNoIndex, Integer pageSize);
+
+
+    void generateIncomeRecordPlan();
+
+    void incomePlanBack();
+
 }

@@ -389,4 +389,13 @@
     where id=#{loanId} and version =#{version} and left_product_money  - #{bidMoney} >= 0
     </update>
 
+    <!--
+        List<LoanInfo> selectLoanInfoListByLeftProductMoneyAndProductStatus(Double leftProductMoney, Integer productStatus);
+  -->
+    <select id="selectLoanInfoListByLeftProductMoneyAndProductStatus" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"></include>
+        from b_loan_info where left_product_money = #{leftProductMoney} and product_status = #{productStatus}
+    </select>
+
 </mapper>

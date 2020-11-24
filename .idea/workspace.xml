@@ -15,19 +15,9 @@
       <change afterPath="$PROJECT_DIR$/../001-dubbo/005-dubbo-service/src/main/java/com/bjpowernode/dubbo/service/impl/UserServiceImpl.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../001-dubbo/005-dubbo-service/src/main/resources/spring-service.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../001-dubbo/005-dubbo-service/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_12.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/002_p2p-exterface/GeneratorMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/002_p2p-exterface/src/main/java/com/bjpowernode/p2p/service/user/FinanceAccountService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/002_p2p-exterface/src/main/java/com/bjpowernode/p2p/service/user/IncomeRecordService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/002_p2p-exterface/src/main/java/com/bjpowernode/p2p/service/user/RechargeRecordService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/service/user/imp/FinanceAccountServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/service/user/imp/IncomeRecordServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/service/user/imp/RechargeRecordServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/004_p2p_common/src/main/java/com/bjpowernode/p2p/entity/BaseResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/004_p2p_common/src/main/java/com/bjpowernode/p2p/entity/PageListResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/004_p2p_common/src/main/java/com/bjpowernode/p2p/utils/HttpClientUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/004_p2p_common/src/main/java/com/bjpowernode/p2p/utils/RealNameIdCardApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/loan/BidInfoController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/static/css/base.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/static/css/cashbox-share.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/static/css/center.css" afterDir="false" />
@@ -67,7 +57,6 @@
       <change afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/static/images/partners.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/static/images/reg-step.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/static/images/slider_updown.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/static/images/timg.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/static/images/weixin01.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/static/images/weixin02.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/static/images/weixinpay.jpg" afterDir="false" />
@@ -90,7 +79,7 @@
       <change afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/commons/leftNav.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/commons/subNav.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/loan.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/loanInfo.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/login.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/myCenter.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/myIncome.html" afterDir="false" />
@@ -108,61 +97,38 @@
       <change afterPath="$PROJECT_DIR$/../springboot/010-springboot-redis/GeneratorMapper.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../springboot/010-springboot-redis/src/main/java/com/bjpowernode/springboot/web/UserController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../springcloud/002-springcloud-eureka/src/main/java/com/bjpowernode/springcloud/web/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/002_p2p-exterface/src/main/java/com/bjpowernode/p2p/model/user/FinanceAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/002_p2p-exterface/src/main/java/com/bjpowernode/p2p/model/user/FinanceAccount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/002_p2p-exterface/src/main/java/com/bjpowernode/p2p/service/loan/BidInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/002_p2p-exterface/src/main/java/com/bjpowernode/p2p/service/loan/BidInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/002_p2p-exterface/src/main/java/com/bjpowernode/p2p/service/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/002_p2p-exterface/src/main/java/com/bjpowernode/p2p/service/user/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/BidInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/BidInfoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/BidInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/BidInfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/002_p2p-exterface/src/main/java/com/bjpowernode/p2p/service/user/IncomeRecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/002_p2p-exterface/src/main/java/com/bjpowernode/p2p/service/user/IncomeRecordService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/IncomeRecordMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/IncomeRecordMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/IncomeRecordMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/IncomeRecordMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/LoanInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/LoanInfoMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/LoanInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/LoanInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/RechargeRecordMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/RechargeRecordMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/RechargeRecordMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/RechargeRecordMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/user/FinanceAccountMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/user/FinanceAccountMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/user/FinanceAccountMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/user/FinanceAccountMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/user/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/user/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/user/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/user/UserMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/service/loan/impl/BidInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/service/loan/impl/BidInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/service/user/imp/RegisterServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/service/user/imp/RegisterServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/service/user/imp/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/service/user/imp/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/IndexController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/service/user/imp/IncomeRecordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/service/user/imp/IncomeRecordServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/loan/BidInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/loan/BidInfoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/loan/LoanInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/loan/LoanInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/user/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/user/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/user/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/005_p2p_web/src/main/resources/static/js/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/static/js/ajax.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/005_p2p_web/src/main/resources/static/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/static/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/005_p2p_web/src/main/resources/static/js/realName.js" beforeDir="false" afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/static/js/realName.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/005_p2p_web/src/main/resources/static/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/static/js/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/005_p2p_web/src/main/resources/static/js/trafficStatistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/static/js/trafficStatistics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/commons/basepath.html" beforeDir="false" afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/commons/basepath.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/commons/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/commons/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/commons/leftNav.html" beforeDir="false" afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/commons/leftNav.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/loan.html" beforeDir="false" afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/loan.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/loanInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/loanInfo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/myCenter.html" beforeDir="false" afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/myCenter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/myIncome.html" beforeDir="false" afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/myIncome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/myInvest.html" beforeDir="false" afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/myInvest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/myRecharge.html" beforeDir="false" afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/myRecharge.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/realName.html" beforeDir="false" afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/realName.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/toRechargeBack.html" beforeDir="false" afterPath="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/toRechargeBack.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/001_p2p_parent/target/" />
     <ignored path="$PROJECT_DIR$/002_p2p-exterface/target/" />
     <ignored path="$PROJECT_DIR$/003_p2p_dataservice/target/" />
     <ignored path="$PROJECT_DIR$/004_p2p_common/target/" />
     <ignored path="$PROJECT_DIR$/005_p2p_web/target/" />
+    <ignored path="$PROJECT_DIR$/006-p2p-timer/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/p2p$timerApplication.ic" NAME="timerApplication Coverage Results" MODIFIED="1606140328403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -202,33 +168,12 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="100" column="31" selection-start-line="100" selection-start-column="31" selection-end-line="100" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/IndexController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="977">
-              <caret line="102" selection-start-line="102" selection-end-line="102" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/loanInfo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="257" column="63" lean-forward="true" selection-start-line="257" selection-start-column="63" selection-end-line="257" selection-end-column="63" />
+            <state relative-caret-position="56">
+              <caret line="309" column="56" selection-start-line="309" selection-start-column="50" selection-end-line="309" selection-end-column="56" />
               <folding>
                 <element signature="n#style#0;n#dd#0;n#div#0;n#dl#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#span#0;n#div#0;n#dd#0;n#dl#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -245,10 +190,90 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/loan.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-114">
+              <caret line="100" column="118" lean-forward="true" selection-start-line="100" selection-start-column="118" selection-end-line="100" selection-end-column="118" />
+              <folding>
+                <element signature="e#4091#4097#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="13">
+              <caret line="212" column="8" selection-start-line="212" selection-start-column="8" selection-end-line="212" selection-end-column="8" />
+              <folding>
+                <element signature="n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#0;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#2;n#div#1;n#div#0;n#div#1;n#div#3;n#div#3;n#body#0;n#html#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/LoginController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="100" column="31" selection-start-line="100" selection-start-column="31" selection-end-line="100" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/IndexController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2700">
+              <caret line="102" selection-start-line="102" selection-end-line="102" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/user/RegisterController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4109">
+              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/loan/LoanInfoController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="347">
+              <caret line="60" column="44" lean-forward="true" selection-start-line="60" selection-start-column="44" selection-end-line="60" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/loan/BidInfoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="40" column="11" lean-forward="true" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
+            <state relative-caret-position="421">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/002_p2p-exterface/src/main/java/com/bjpowernode/p2p/service/loan/BidInfoService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -256,44 +281,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/service/loan/impl/BidInfoServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1288">
-              <caret line="150" lean-forward="true" selection-start-line="150" selection-end-line="150" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/user/FinanceAccountMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/user/FinanceAccountMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="163" column="2" selection-start-line="163" selection-start-column="2" selection-end-line="163" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/LoanInfoMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="988">
-              <caret line="44" column="8" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/WebApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+            <state relative-caret-position="-150">
+              <caret line="118" selection-start-line="118" selection-end-line="118" />
             </state>
           </provider>
         </entry>
@@ -322,12 +311,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/loan.html" />
-        <option value="$PROJECT_DIR$/004_p2p_common/src/main/java/com/bjpowernode/p2p/utils/HttpClientUtils.java" />
-        <option value="$PROJECT_DIR$/004_p2p_common/src/main/java/com/bjpowernode/p2p/utils/Tools.java" />
-        <option value="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/user/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/005_p2p_web/src/main/resources/static/js/realName.js" />
-        <option value="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/user/UserMapper.java" />
         <option value="$PROJECT_DIR$/004_p2p_common/src/main/java/com/bjpowernode/p2p/utils/RealNameIdCardApi.java" />
         <option value="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/realName.html" />
         <option value="$PROJECT_DIR$/005_p2p_web/src/main/resources/static/js/register.js" />
@@ -352,10 +335,6 @@
         <option value="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/RechargeRecordMapper.java" />
         <option value="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/RechargeRecordMapper.xml" />
         <option value="$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/user/UserController.java" />
-        <option value="$PROJECT_DIR$/002_p2p-exterface/src/main/java/com/bjpowernode/p2p/service/user/IncomeRecordService.java" />
-        <option value="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/service/user/imp/IncomeRecordServiceImpl.java" />
-        <option value="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/IncomeRecordMapper.java" />
-        <option value="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/IncomeRecordMapper.xml" />
         <option value="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/myCenter.html" />
         <option value="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/myRecharge.html" />
         <option value="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/myInvest.html" />
@@ -363,16 +342,26 @@
         <option value="$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/BidInfoMapper.java" />
         <option value="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/BidInfoMapper.xml" />
-        <option value="$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/loan/LoanInfoController.java" />
         <option value="$PROJECT_DIR$/005_p2p_web/src/main/resources/static/js/login.js" />
         <option value="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/commons/basepath.html" />
-        <option value="$PROJECT_DIR$/002_p2p-exterface/src/main/java/com/bjpowernode/p2p/service/loan/BidInfoService.java" />
-        <option value="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/LoanInfoMapper.xml" />
         <option value="$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/WebApplication.java" />
+        <option value="$PROJECT_DIR$/006-p2p-timer/pom.xml" />
+        <option value="$PROJECT_DIR$/006-p2p-timer/src/main/java/com/bjpowernode/p2p/timer/GenerateIncomePlan.java" />
+        <option value="$PROJECT_DIR$/002_p2p-exterface/src/main/java/com/bjpowernode/p2p/service/user/IncomeRecordService.java" />
+        <option value="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/LoanInfoMapper.xml" />
         <option value="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/LoanInfoMapper.java" />
-        <option value="$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/loan/BidInfoController.java" />
+        <option value="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/IncomeRecordMapper.java" />
+        <option value="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/IncomeRecordMapper.xml" />
+        <option value="$PROJECT_DIR$/006-p2p-timer/src/main/java/com/bjpowernode/p2p/timer/GenerateIncomePlanBack.java" />
+        <option value="$PROJECT_DIR$/006-p2p-timer/src/main/java/com/bjpowernode/p2p/Application.java" />
+        <option value="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/service/user/imp/IncomeRecordServiceImpl.java" />
+        <option value="$PROJECT_DIR$/006-p2p-timer/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/loanInfo.html" />
+        <option value="$PROJECT_DIR$/002_p2p-exterface/src/main/java/com/bjpowernode/p2p/service/loan/BidInfoService.java" />
         <option value="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/service/loan/impl/BidInfoServiceImpl.java" />
+        <option value="$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/loan/BidInfoController.java" />
+        <option value="$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/loan/LoanInfoController.java" />
+        <option value="$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/loan.html" />
       </list>
     </option>
   </component>
@@ -394,10 +383,10 @@
     <option name="vmOptions" value="-DarchetypeCatalog=local" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="637" />
-    <option name="y" value="1" />
-    <option name="width" value="1297" />
-    <option name="height" value="1062" />
+    <option name="x" value="571" />
+    <option name="y" value="5" />
+    <option name="width" value="1360" />
+    <option name="height" value="1055" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -407,113 +396,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="p2p" type="b2602c69:ProjectViewProjectNode" />
-              <item name="002_p2p-exterface" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="p2p" type="b2602c69:ProjectViewProjectNode" />
-              <item name="003_p2p_dataservice" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="p2p" type="b2602c69:ProjectViewProjectNode" />
-              <item name="003_p2p_dataservice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="p2p" type="b2602c69:ProjectViewProjectNode" />
-              <item name="003_p2p_dataservice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="p2p" type="b2602c69:ProjectViewProjectNode" />
-              <item name="003_p2p_dataservice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="p2p" type="b2602c69:ProjectViewProjectNode" />
-              <item name="003_p2p_dataservice" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="p2p" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="p2p" type="b2602c69:ProjectViewProjectNode" />
-              <item name="005_p2p_web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="p2p" type="b2602c69:ProjectViewProjectNode" />
-              <item name="005_p2p_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="p2p" type="b2602c69:ProjectViewProjectNode" />
-              <item name="005_p2p_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="p2p" type="b2602c69:ProjectViewProjectNode" />
-              <item name="005_p2p_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="p2p" type="b2602c69:ProjectViewProjectNode" />
-              <item name="005_p2p_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="p2p" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="p2p" type="b2602c69:ProjectViewProjectNode" />
-              <item name="005_p2p_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="p2p" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="p2p" type="b2602c69:ProjectViewProjectNode" />
-              <item name="005_p2p_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="p2p" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="loan" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="p2p" type="b2602c69:ProjectViewProjectNode" />
-              <item name="005_p2p_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="p2p" type="b2602c69:ProjectViewProjectNode" />
-              <item name="005_p2p_web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -525,9 +410,10 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1606115249501" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1606180428201" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/service/user" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/006-p2p-timer/pom.xml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -537,15 +423,12 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.VCS" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Users\Kevin\IdeaProjects\p2p\003_p2p_dataservice\src\main\java\com\bjpowernode\p2p\mapper\loan" />
+      <recent name="D:\Users\Kevin\IdeaProjects\p2p\003_p2p_dataservice\src\main\java\com\bjpowernode\p2p\mapper\user" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.bjpowernode.p2p" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Users\Kevin\IdeaProjects\p2p\005_p2p_web\src\main\resources\static\images" />
-      <recent name="D:\Users\Kevin\IdeaProjects\p2p\004_p2p_common\src\main\java\com\bjpowernode\p2p\utils" />
-      <recent name="D:\Users\Kevin\IdeaProjects\p2p\004_p2p_common\src\test\java\com\bjpowernode\p2p" />
-      <recent name="D:\Users\Kevin\IdeaProjects\p2p\005_p2p_web\src\main\resources\templates" />
-      <recent name="D:\Users\Kevin\IdeaProjects\p2p\005_p2p_web\src\main\resources\static" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.bjpowernode.p2p.service.user.imp" />
@@ -553,9 +436,12 @@
       <recent name="com.bjpowernode.p2p.service.loan.impl" />
       <recent name="com.bjpowernode.p2p" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Users\Kevin\IdeaProjects\p2p\003_p2p_dataservice\src\main\java\com\bjpowernode\p2p\mapper\loan" />
-      <recent name="D:\Users\Kevin\IdeaProjects\p2p\003_p2p_dataservice\src\main\java\com\bjpowernode\p2p\mapper\user" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\Kevin\IdeaProjects\p2p\003_p2p_dataservice\src\main\java\com\bjpowernode\p2p\service\user\imp" />
+      <recent name="D:\Users\Kevin\IdeaProjects\p2p\005_p2p_web\src\main\resources\static\images" />
+      <recent name="D:\Users\Kevin\IdeaProjects\p2p\004_p2p_common\src\main\java\com\bjpowernode\p2p\utils" />
+      <recent name="D:\Users\Kevin\IdeaProjects\p2p\004_p2p_common\src\test\java\com\bjpowernode\p2p" />
+      <recent name="D:\Users\Kevin\IdeaProjects\p2p\005_p2p_web\src\main\resources\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -570,27 +456,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.DataServiceApplication">
-    <configuration name="Tools" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.bjpowernode.p2p.utils.Tools" />
-      <module name="004_p2p_common" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.bjpowernode.p2p.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="004_p2p_common" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.bjpowernode.p2p.Application" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.WebApplication">
     <configuration name="DataServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="003_p2p_dataservice" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.bjpowernode.p2p.DataServiceApplication" />
@@ -614,16 +480,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="timerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="004_p2p_common" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.bjpowernode.p2p.Application" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="timerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
+      <module name="006-p2p-timer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bjpowernode.p2p.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.bjpowernode.p2p.Application" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.Tools" />
       <item itemvalue="Spring Boot.DataServiceApplication" />
-      <item itemvalue="Spring Boot.Application" />
       <item itemvalue="Spring Boot.WebApplication" />
+      <item itemvalue="Spring Boot.timerApplication" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.WebApplication" />
-        <item itemvalue="Application.Tools" />
+        <item itemvalue="Spring Boot.timerApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -655,11 +542,12 @@
       <workItem from="1605958346923" duration="8332000" />
       <workItem from="1606091182108" duration="8978000" />
       <workItem from="1606100192226" duration="6577000" />
+      <workItem from="1606177342566" duration="3078000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155077000" />
+    <option name="totallyTimeSpent" value="159692000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -671,8 +559,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="510" y="1" width="1037" height="849" extended-state="0" />
-    <editor active="true" />
+    <frame x="457" y="4" width="1088" height="844" extended-state="0" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="Capture Tool" order="1" />
@@ -681,11 +568,51 @@
       <window_info id="Web" order="4" side_tool="true" />
       <window_info id="Designer" order="5" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="7" weight="0.288874" />
+      <window_info content_ui="combo" id="Project" order="7" visible="true" weight="0.33203885" />
       <window_info anchor="bottom" id="SQL Generator" order="0" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.49578822" weight="0.9177127" />
+      <window_info active="true" anchor="bottom" id="Run" order="1" sideWeight="0.4953083" visible="true" weight="0.744382" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.39518413" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.5311615" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.5302391" />
+      <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50469166" side_tool="true" weight="0.5439094" />
+      <window_info anchor="bottom" id="Java Enterprise" order="6" weight="0.3286119" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3286119" />
+      <window_info anchor="bottom" id="Spring" order="8" weight="0.3286119" />
+      <window_info anchor="bottom" id="Message" order="9" />
+      <window_info anchor="bottom" id="Find" order="10" />
+      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
+      <window_info anchor="bottom" id="Database Changes" order="13" weight="0.3286119" />
+      <window_info anchor="bottom" id="TODO" order="14" weight="0.32857144" />
+      <window_info anchor="bottom" id="Messages" order="15" weight="0.3243626" />
+      <window_info anchor="bottom" id="Database Console" order="16" weight="0.32991204" />
+      <window_info anchor="bottom" id="Duplicate detector" order="17" weight="0.3286119" />
+      <window_info anchor="right" id="Palette" order="0" />
+      <window_info anchor="right" id="Word Book" order="1" side_tool="true" weight="0.3291262" />
+      <window_info anchor="right" id="Capture Analysis" order="2" />
+      <window_info anchor="right" id="Database" order="3" weight="0.23726542" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Maven" order="6" weight="0.19839142" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="8" sideWeight="0.49929675" weight="0.2485437" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
+      <window_info anchor="right" id="Coverage" order="10" sideWeight="0.5007032" side_tool="true" weight="0.2485437" />
+      <window_info anchor="right" id="Bean Validation" order="11" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Image Layers" order="0" />
+      <window_info id="Capture Tool" order="1" />
+      <window_info id="UI Designer" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Web" order="4" side_tool="true" />
+      <window_info id="Designer" order="5" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="7" visible="true" weight="0.3324397" />
+      <window_info anchor="bottom" id="SQL Generator" order="0" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.49578822" weight="0.5439094" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.39518413" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.5302391" />
       <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.5042118" side_tool="true" weight="0.70711297" />
       <window_info anchor="bottom" id="Java Enterprise" order="6" weight="0.3286119" />
@@ -697,57 +624,21 @@
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="Database Changes" order="13" weight="0.3286119" />
       <window_info anchor="bottom" id="TODO" order="14" weight="0.32857144" />
-      <window_info anchor="bottom" id="Messages" order="15" weight="0.3257143" />
+      <window_info anchor="bottom" id="Messages" order="15" weight="0.3243626" />
       <window_info anchor="bottom" id="Database Console" order="16" weight="0.32991204" />
       <window_info anchor="bottom" id="Duplicate detector" order="17" weight="0.3286119" />
       <window_info anchor="right" id="Palette" order="0" />
-      <window_info anchor="right" id="Word Book" order="1" side_tool="true" />
+      <window_info anchor="right" id="Word Book" order="1" side_tool="true" weight="0.3291262" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
-      <window_info anchor="right" id="Database" order="3" weight="0.23793566" />
+      <window_info anchor="right" id="Database" order="3" weight="0.23726542" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" weight="0.1997319" />
+      <window_info anchor="right" id="Maven" order="6" weight="0.19839142" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="8" weight="0.24932976" />
+      <window_info anchor="right" id="Ant Build" order="8" sideWeight="0.49929675" weight="0.2485437" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Image Layers" order="0" />
-      <window_info id="Capture Tool" order="1" />
-      <window_info id="UI Designer" order="2" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info id="Web" order="4" side_tool="true" />
-      <window_info id="Designer" order="5" />
-      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="7" visible="true" weight="0.288874" />
-      <window_info anchor="bottom" id="SQL Generator" order="0" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.49578822" weight="0.9177127" />
-      <window_info anchor="bottom" id="Debug" order="2" weight="0.39518413" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.5311615" />
-      <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.5042118" side_tool="true" weight="0.70714283" />
-      <window_info anchor="bottom" id="Java Enterprise" order="6" weight="0.3286119" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3286119" />
-      <window_info anchor="bottom" id="Spring" order="8" weight="0.3286119" />
-      <window_info anchor="bottom" id="Message" order="9" />
-      <window_info anchor="bottom" id="Find" order="10" />
-      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
-      <window_info anchor="bottom" id="Database Changes" order="13" weight="0.3286119" />
-      <window_info anchor="bottom" id="TODO" order="14" weight="0.32857144" />
-      <window_info anchor="bottom" id="Messages" order="15" weight="0.3257143" />
-      <window_info anchor="bottom" id="Database Console" order="16" weight="0.32991204" />
-      <window_info anchor="bottom" id="Duplicate detector" order="17" weight="0.3286119" />
-      <window_info anchor="right" id="Palette" order="0" />
-      <window_info anchor="right" id="Word Book" order="1" side_tool="true" />
-      <window_info anchor="right" id="Capture Analysis" order="2" />
-      <window_info anchor="right" id="Database" order="3" weight="0.23793566" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven" order="6" weight="0.1997319" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="8" weight="0.24932976" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
+      <window_info anchor="right" id="Coverage" order="10" sideWeight="0.5007032" side_tool="true" weight="0.2485437" />
+      <window_info anchor="right" id="Bean Validation" order="11" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -758,76 +649,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/resources/static/js/trafficStatistics.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="90" column="53" lean-forward="true" selection-start-line="90" selection-start-column="53" selection-end-line="90" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/commons/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="75" column="33" lean-forward="true" selection-start-line="75" selection-start-column="33" selection-end-line="75" selection-end-column="33" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#1;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#1;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#1;n#div#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/service/IncomeRecordService.java" />
-    <entry file="file://$PROJECT_DIR$/002_p2p-exterface/src/main/java/com/bjpowernode/p2p/service/user/FinanceAccountService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/service/user/imp/RegisterServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/service/user/imp/FinanceAccountServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="22" column="65" lean-forward="true" selection-start-line="22" selection-start-column="65" selection-end-line="22" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/resources/static/images/timg.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/commons/subNav.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/user/RegisterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1121">
-          <caret line="173" column="35" selection-start-line="173" selection-start-column="21" selection-end-line="173" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/002_p2p-exterface/src/main/java/com/bjpowernode/p2p/model/user/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/002_p2p-exterface/src/main/java/com/bjpowernode/p2p/service/loan/LoanInfoService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -849,17 +670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6163">
-          <caret line="63" column="14" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2833" />
@@ -868,13 +678,6 @@
     <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/toRecharge.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4663" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/myCenter.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1590">
-          <caret line="62" column="29" lean-forward="true" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/002_p2p-exterface/src/main/java/com/bjpowernode/p2p/service/user/RechargeRecordService.java">
@@ -904,34 +707,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/service/user/imp/IncomeRecordServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="37" column="44" lean-forward="true" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/RechargeRecordMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="372">
           <caret line="257" column="4" selection-start-line="257" selection-start-column="4" selection-end-line="257" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/IncomeRecordMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="288" lean-forward="true" selection-start-line="288" selection-end-line="288" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/user/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
-          <caret line="75" column="24" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -946,23 +725,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/002_p2p-exterface/src/main/java/com/bjpowernode/p2p/service/user/IncomeRecordService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/IncomeRecordMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/myIncome.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
@@ -970,53 +732,6 @@
           <folding>
             <element signature="n#style#0;n#span#2;n#dt#0;n#dl#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/loan.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1727">
-          <caret line="75" column="23" lean-forward="true" selection-start-line="75" selection-start-column="23" selection-end-line="75" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/myInvest.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="73" column="93" selection-start-line="73" selection-start-column="93" selection-end-line="73" selection-end-column="112" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#dl#0;n#div#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="57" column="121" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="121" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#0;n#ul#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/resources/static/js/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1526">
-          <caret line="147" column="52" selection-start-line="147" selection-start-column="52" selection-end-line="147" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/002_p2p-exterface/src/main/java/com/bjpowernode/p2p/service/loan/BidInfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="61" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -1041,26 +756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/loan/LoanInfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="92" selection-start-line="92" selection-end-line="92" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="100" column="31" selection-start-line="100" selection-start-column="31" selection-end-line="100" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/WebApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1076,13 +771,6 @@
             <element signature="e#723#724#0" expanded="true" />
             <element signature="e#760#761#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/DataServiceApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1114,31 +802,230 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/005_p2p_web/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="8" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/003_p2p_dataservice/src/main/resources/logback-spring.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/006-p2p-timer/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-60">
+          <caret line="55" column="50" lean-forward="true" selection-start-line="55" selection-start-column="50" selection-end-line="55" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/LoanInfoMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1856">
-          <caret line="305" column="50" lean-forward="true" selection-start-line="305" selection-start-column="50" selection-end-line="305" selection-end-column="50" />
+        <state relative-caret-position="330">
+          <caret line="396" column="52" selection-start-line="396" selection-start-column="52" selection-end-line="396" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/LoanInfoMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="988">
-          <caret line="44" column="8" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
+        <state relative-caret-position="331">
+          <caret line="45" column="50" selection-start-line="45" selection-start-column="50" selection-end-line="45" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/IncomeRecordMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/006-p2p-timer/src/main/java/com/bjpowernode/p2p/timer/GenerateIncomePlan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/mapper/loan/IncomeRecordMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1">
+          <caret line="281" column="38" selection-start-line="281" selection-start-column="38" selection-end-line="281" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/service/user/imp/FinanceAccountServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/002_p2p-exterface/src/main/java/com/bjpowernode/p2p/service/user/IncomeRecordService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/service/user/imp/IncomeRecordServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="24" column="8" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/DataServiceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/006-p2p-timer/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/006-p2p-timer/src/main/java/com/bjpowernode/p2p/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/006-p2p-timer/src/main/java/com/bjpowernode/p2p/timer/GenerateIncomePlanBack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="20" column="45" lean-forward="true" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/myInvest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#dl#0;n#div#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="942">
+          <caret line="57" column="121" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="121" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/resources/static/js/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2068">
+          <caret line="87" column="44" lean-forward="true" selection-start-line="87" selection-start-column="44" selection-end-line="87" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/myCenter.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="942">
+          <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/user/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4950">
+          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="100" column="31" selection-start-line="100" selection-start-column="31" selection-end-line="100" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/IndexController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="977">
+        <state relative-caret-position="2700">
           <caret line="102" selection-start-line="102" selection-end-line="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/user/RegisterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4109">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-redis/2.3.4.RELEASE/spring-data-redis-2.3.4.RELEASE.jar!/org/springframework/data/redis/core/BoundZSetOperations.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/002_p2p-exterface/src/main/java/com/bjpowernode/p2p/service/loan/BidInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/loan/BidInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/loan/LoanInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="60" column="44" lean-forward="true" selection-start-line="60" selection-start-column="44" selection-end-line="60" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/loanInfo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="257" column="63" lean-forward="true" selection-start-line="257" selection-start-column="63" selection-end-line="257" selection-end-column="63" />
+        <state relative-caret-position="56">
+          <caret line="309" column="56" selection-start-line="309" selection-start-column="50" selection-end-line="309" selection-end-column="56" />
           <folding>
             <element signature="n#style#0;n#dd#0;n#div#0;n#dl#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#span#0;n#div#0;n#dd#0;n#dl#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1153,17 +1040,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/java/com/bjpowernode/p2p/controller/loan/BidInfoController.java">
+    <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/loan.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="40" column="11" lean-forward="true" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="11" />
+        <state relative-caret-position="-114">
+          <caret line="100" column="118" lean-forward="true" selection-start-line="100" selection-start-column="118" selection-end-line="100" selection-end-column="118" />
+          <folding>
+            <element signature="e#4091#4097#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/005_p2p_web/src/main/resources/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13">
+          <caret line="212" column="8" selection-start-line="212" selection-start-column="8" selection-end-line="212" selection-end-column="8" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#2;n#div#1;n#div#0;n#div#1;n#div#3;n#div#3;n#body#0;n#html#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/003_p2p_dataservice/src/main/java/com/bjpowernode/p2p/service/loan/impl/BidInfoServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1288">
-          <caret line="150" lean-forward="true" selection-start-line="150" selection-end-line="150" />
+        <state relative-caret-position="-150">
+          <caret line="118" selection-start-line="118" selection-end-line="118" />
         </state>
       </provider>
     </entry>
