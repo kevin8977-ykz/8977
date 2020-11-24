@@ -185,4 +185,8 @@
         select * from u_finance_account where uid=#{id}
     </select>
 
+    <!--void insertByUid(FinanceAccount financeAccount);-->
+    <insert id="insertByUid"  parameterType="com.bjpowernode.p2p.model.user.FinanceAccount" >
+        insert into  u_finance_account (uid,available_money)  values (#{financeAccount.uid},#{financeAccount.availableMoney})
+    </insert>
 </mapper>

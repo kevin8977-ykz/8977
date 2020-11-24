@@ -1,7 +1,9 @@
 package com.bjpowernode.p2p.service.user.imp;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.bjpowernode.p2p.mapper.user.FinanceAccountMapper;
 import com.bjpowernode.p2p.mapper.user.UserMapper;
+import com.bjpowernode.p2p.model.user.FinanceAccount;
 import com.bjpowernode.p2p.model.user.User;
 import com.bjpowernode.p2p.model.user.UserExample;
 import com.bjpowernode.p2p.service.user.UserService;
@@ -24,6 +26,8 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;
+
+
 
     public String findById(){
         System.out.println("findById");

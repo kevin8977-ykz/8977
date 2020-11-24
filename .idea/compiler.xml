@@ -11,6 +11,8 @@
         <module name="004_p2p_common" />
         <module name="005_p2p_web" />
         <module name="006-p2p-timer" />
+        <module name="007-p2p-pay" />
+        <module name="alipay-trade-wap-pay" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
@@ -20,6 +22,8 @@
       <module name="004_p2p_common" target="1.8" />
       <module name="005_p2p_web" target="1.8" />
       <module name="006-p2p-timer" target="1.8" />
+      <module name="007-p2p-pay" target="1.8" />
+      <module name="alipay-trade-wap-pay" target="1.7" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -30,6 +34,7 @@
       <module name="004_p2p_common" options="-parameters" />
       <module name="005_p2p_web" options="-parameters" />
       <module name="006-p2p-timer" options="-parameters" />
+      <module name="007-p2p-pay" options="-parameters" />
     </option>
   </component>
 </project>

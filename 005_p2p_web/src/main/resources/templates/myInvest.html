@@ -73,19 +73,19 @@
                             <dd>
                                 <div class="deal-time" th:text="${#dates.format(bid.bidTime,'yyyy-MM-dd hh:mm:ss')}">2016-01-03 12:23:32</div>
                                 <div class="deal-name" th:text="${bid.productName}">新手宝</div>
-                               <span th:if="${bid.bidStatus == '1'}">
+                               <span th:if="${bid.bidStatus == 1}">
                                 <div class="deal-type" style="width:120px" >
                                      <!--判断投资状态是否为1，即成功 -->
                                     投资成功
                                </div>
                                 </span>
-                                <span th:if="${bid.bidStatus != '1'}">
+                                <span th:if="${bid.bidStatus != 1}">
                                 <div class="deal-type" style="width:120px" >
                                      <!--判断投资状态是否为1，即成功 -->
                                     投资失败
                                </div>
                                 </span>
-                                <div class="deal-money" th:text="${bid.bidMoney}">100.0</div>
+                                <div class="deal-money" th:text="${#numbers.formatCurrency(bid.bidMoney)}">100.0</div>
                             </dd>
                             </div>
 

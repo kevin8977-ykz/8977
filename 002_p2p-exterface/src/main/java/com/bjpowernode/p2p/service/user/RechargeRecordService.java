@@ -13,4 +13,7 @@ public interface RechargeRecordService {
 
     List<RechargeRecord> findRechargeRecordListByUid(Integer id, int pageNoIndex, Integer pageSize);
 
+    String getRechargeNo();
+
+    RechargeRecord recharge(Double rechargeMoney, Integer id);
 }

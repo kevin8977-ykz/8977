@@ -194,13 +194,14 @@ $(function () {
                 dataType:"json",
                 success:function (data) {
                     if(data.success){
-                        alert(data.msg);
+                        showError("messageCode",data.msg)
                     }else{
-                        alert(data.msg);
+                        showError("messageCode","网络异常，请稍后再试！")
                     }
                 },
                 error:function () {
                     //网络异常
+                    showError("messageCode","网络异常，请稍后再试！")
                 }
             })
         }

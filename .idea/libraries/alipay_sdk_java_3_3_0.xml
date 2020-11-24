@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="alipay-sdk-java-3.3.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/alipay-trade-wap-pay/src/main/webapp/WEB-INF/lib/alipay-sdk-java-3.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/alipay-trade-wap-pay/src/main/webapp/WEB-INF/lib/commons-logging-1.1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/alipay-trade-wap-pay/src/main/webapp/WEB-INF/lib/alipay-sdk-java-3.3.0-source.jar!/" />
+      <root url="jar://$PROJECT_DIR$/alipay-trade-wap-pay/src/main/webapp/WEB-INF/lib/commons-logging-1.1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>跳转到支付宝充值页面</title>
+</head>
+<body>
+<!--
+        调用支付工程的接口
+               传递参数:支付宝官方的api文档
+        -->
+    <form action="http://localhost:9090/pay/alipay" method="post">
+        <!--通过查看支付宝官网api接口
+                传递参数:
+                    subject(必选):标题
+                    body(可选):描述
+                    total_amount:支付金额
+                    out_trade_no:订单号
+
+                    所有参数都是从后台获取的
+        -->
+        <input type="hidden" name="body" th:value="${body}">
+        <input type="hidden" name="subject" th:value="${subject}">
+        <input type="hidden" name="out_trade_no" th:value="${out_trade_no}">
+        <input type="hidden" name="total_amount" th:value="${total_amount}">
+    </form>
+<!--自动提交表单-->
+<script>document.forms[0].submit()</script>
+</body>
+</html>

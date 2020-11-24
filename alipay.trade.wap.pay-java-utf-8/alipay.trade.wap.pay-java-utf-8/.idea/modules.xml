@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/alipay.trade.wap.pay-java-utf-8.iml" filepath="$PROJECT_DIR$/.idea/alipay.trade.wap.pay-java-utf-8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/alipay.trade.wap.pay-java-utf-8.iml" filepath="$PROJECT_DIR$/alipay.trade.wap.pay-java-utf-8.iml" />
     </modules>
   </component>
 </project>

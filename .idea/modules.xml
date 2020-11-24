@@ -8,6 +8,8 @@
       <module fileurl="file://$PROJECT_DIR$/004_p2p_common/004_p2p_common.iml" filepath="$PROJECT_DIR$/004_p2p_common/004_p2p_common.iml" />
       <module fileurl="file://$PROJECT_DIR$/005_p2p_web/005_p2p_web.iml" filepath="$PROJECT_DIR$/005_p2p_web/005_p2p_web.iml" />
       <module fileurl="file://$PROJECT_DIR$/006-p2p-timer/006-p2p-timer.iml" filepath="$PROJECT_DIR$/006-p2p-timer/006-p2p-timer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/007-p2p-pay/007-p2p-pay.iml" filepath="$PROJECT_DIR$/007-p2p-pay/007-p2p-pay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/alipay-trade-wap-pay/alipay-trade-wap-pay.iml" filepath="$PROJECT_DIR$/alipay-trade-wap-pay/alipay-trade-wap-pay.iml" />
     </modules>
   </component>
 </project>

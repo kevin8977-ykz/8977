@@ -19,6 +19,8 @@
         <module>../003_p2p_dataservice</module>
         <module>../004_p2p_common</module>
         <module>../005_p2p_web</module>
+        <module>../007-p2p-pay</module>
+        <module>../006-p2p-timer</module>
     </modules>
 
     <name>001_p2p_parent</name>

@@ -48,9 +48,13 @@
                 <ul class="credenBalance">
                     <li class="availMoney">
                         <h3>可用余额：</h3>
+
+                            <!--<span class="moneyIcon"><i ">¥ 0.0 元</i></span>-->
+
                         <span class="moneyIcon"><i th:text="${#numbers.formatCurrency(financeAccount.availableMoney)}">¥ 9000.0 元</i></span>
+
                         <a class="recharge" th:href="@{/loan/page/toRecharge}" >充值</a>
-                        <a class="inves" th:href="@{/loan/loan}">投资</a>
+                        <a class="inves" th:href="@{/loan/loan/(pType=1)}">投资</a>
                     </li>
                 </ul>
             </div>

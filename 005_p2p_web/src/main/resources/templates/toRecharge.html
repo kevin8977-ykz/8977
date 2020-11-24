@@ -20,10 +20,14 @@
             $('#chongzhi').addClass('on');
             //选择第三种支付方式
             $('#alipay').click(function () {
+                //给隐藏域赋值
+                $("#payType").val("alipay");
                 $(this).addClass('img_on').append("<i></i>");
                 $(this).parent().siblings().children().removeClass('img_on');
             });
             $('#weixinpay').click(function () {
+                //给隐藏域赋值
+                $("#payType").val("wxpay");
                 $(this).addClass('img_on').append("<i></i>");
                 $(this).parent().siblings().children().removeClass('img_on');
             });
@@ -64,7 +68,28 @@
                 $("#div1_1").hide();
                 $("#dialog-overlay").show();
                 $("#failurePayment").show();
-                $("#rechargeForm").submit();
+                //$("#rechargeForm").submit();
+
+                //获取支付状态,微信或支付宝
+                var payType = $("#payType").val();
+
+                //获取支付金额
+                var rechargeMoney = $("#rechargeMoney").val();
+
+                if (payType === "alipay"){
+                    //支付宝支付
+                    //给表单中的数据进行赋值
+                    $("#alipayRechargeMoney").val(rechargeMoney);
+                    //提交支付宝支付的表单数据
+                    $("#alipayForm").submit();
+
+                }else {
+                    //微信支付
+                    $("#wxpayRechargeMoney").val(rechargeMoney);
+
+                    //提交微信支付的表单数据
+                    $("#wxpayForm").submit();
+                }
             }
         }
     </script>
@@ -100,21 +125,30 @@
                 <!--未认证end-->
 
                 <!-- 充值start -->
-                    <form id="rechargeForm" th:action="@{/loan/toRecharge}" method="post" target="_blank">
+                    <!--<form id="rechargeForm" th:action="@{/loan/toRecharge}" method="post" target="_blank">-->
                         <div class="payInvest" style="display:block;">
                             <div class="investMain">
                                 <h3>请选择支付平台</h3>
+                                <input type="hidden" id="payType"/>
                                 <div class="investContent">
                                     <div class="investOver clearfix" id="banks2">
                                         <label>
-                                            <div class="img_cnt" id="alipay">
-                                                <img th:src="@{/images/alipay.jpg}"/>
-                                            </div>
+                                                <div class="img_cnt" id="alipay">
+                                                    <form id="alipayForm" th:action="@{/loan/alipay}" method="post">
+                                                        <!--充值金额的隐藏域-->
+                                                        <input type="hidden" name="rechargeMoney" id="alipayRechargeMoney"/>
+                                                    <img th:src="@{/images/alipay.jpg}"/>
+                                                    </form>
+                                                </div>
                                         </label>
                                         <label>
-                                            <div class="img_cnt" id="weixinpay">
-                                                <img th:src="@{/images/weixinpay.jpg}"/>
-                                            </div>
+                                                <div class="img_cnt" id="weixinpay" >
+                                                    <form id="wxpayForm" th:action="@{/loan/wxpay}" method="post">
+                                                        <!--充值金额的隐藏域-->
+                                                        <input type="hidden" name="rechargeMoney" id="wxpayRechargeMoney"/>
+                                                    <img th:src="@{/images/weixinpay.jpg}"/>
+                                                    </form>
+                                                </div>
                                         </label>
                                     </div>
                                 </div>
@@ -138,7 +172,7 @@
                                     4. 如果充值中出现问题，请联系客服400-890-0000。</p>
                             </div>
                         </div>
-                    </form>
+                    <!--</form>-->
                 <!-- 充值end -->
             </div>
         </div>

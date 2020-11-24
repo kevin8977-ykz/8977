@@ -1,0 +1,23 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="alipay-trade-wap-pay:war exploded">
+    <output-path>$PROJECT_DIR$/alipay-trade-wap-pay/target/alipay-trade-wap-pay</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>alipay-trade-wap-pay</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="alipay-trade-wap-pay" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/alipay-trade-wap-pay/target/alipay-trade-wap-pay/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="alipay-trade-wap-pay/web/Web" />
+    </root>
+  </artifact>
+</component>

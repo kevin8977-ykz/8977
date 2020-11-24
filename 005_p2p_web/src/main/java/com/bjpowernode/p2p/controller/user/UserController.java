@@ -174,6 +174,7 @@ public class UserController {
 
         //查询当前用户的可用余额
         FinanceAccount financeAccount = financeAccountService.findByUid(uid);
+        System.out.println(financeAccount);
         model.addAttribute("financeAccount",financeAccount);
 
         //查询最近5笔充值记录
