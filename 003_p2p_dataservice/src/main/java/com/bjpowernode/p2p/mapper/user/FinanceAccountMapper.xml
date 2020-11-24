@@ -182,7 +182,7 @@
 
     <!--FinanceAccount selectByUid(Integer id);-->
     <select id="selectByUid" resultMap="BaseResultMap">
-        select * from u_finance_account where uid=#{id}
+        select * from u_finance_account where uid=#{uid}
     </select>
 
     <!--void insertByUid(FinanceAccount financeAccount);-->

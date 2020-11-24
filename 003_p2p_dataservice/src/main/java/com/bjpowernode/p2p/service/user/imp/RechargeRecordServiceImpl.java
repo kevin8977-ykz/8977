@@ -5,6 +5,7 @@ import com.bjpowernode.p2p.mapper.loan.RechargeRecordMapper;
 import com.bjpowernode.p2p.model.loan.RechargeRecord;
 import com.bjpowernode.p2p.model.loan.RechargeRecordExample;
 import com.bjpowernode.p2p.service.user.RechargeRecordService;
+import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
@@ -92,5 +93,23 @@ public class RechargeRecordServiceImpl implements RechargeRecordService {
         }
         return rechargeRecord;
 
+    }
+
+    @Override
+    public RechargeRecord findRechargeRecordByRechargeNo(String out_trade_no) {
+        RechargeRecordExample example = new RechargeRecordExample();
+        RechargeRecordExample.Criteria criteria = example.createCriteria();
+        criteria.andRechargeNoEqualTo(out_trade_no);
+        List<RechargeRecord> rechargeRecordList = rechargeRecordMapper.selectByExample(example);
+
+        if (ObjectUtils.isNotEmpty(rechargeRecordList)){
+            return rechargeRecordList.get(0);
+        }
+        return null ;
+    }
+
+    @Override
+    public void updateRechargeStatusById(RechargeRecord updateRechargeRecord) {
+        rechargeRecordMapper.updateByPrimaryKeySelective(updateRechargeRecord);
     }
 }

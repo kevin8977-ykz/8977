@@ -16,4 +16,8 @@ public interface RechargeRecordService {
     String getRechargeNo();
 
     RechargeRecord recharge(Double rechargeMoney, Integer id);
+
+    RechargeRecord findRechargeRecordByRechargeNo(String out_trade_no);
+
+    void updateRechargeStatusById(RechargeRecord updateRechargeRecord);
 }
