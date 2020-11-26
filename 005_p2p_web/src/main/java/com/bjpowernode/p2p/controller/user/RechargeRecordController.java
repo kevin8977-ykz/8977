@@ -2,19 +2,29 @@ package com.bjpowernode.p2p.controller.user;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.fastjson.JSONObject;
+import com.bjpowernode.p2p.entity.BaseResult;
 import com.bjpowernode.p2p.model.loan.RechargeRecord;
+import com.bjpowernode.p2p.model.user.FinanceAccount;
 import com.bjpowernode.p2p.model.user.User;
 import com.bjpowernode.p2p.service.user.FinanceAccountService;
 import com.bjpowernode.p2p.service.user.RechargeRecordService;
 import com.bjpowernode.p2p.utils.HttpClientUtils;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.EncodeHintType;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.client.j2se.MatrixToImageWriter;
+import com.google.zxing.common.BitMatrix;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.http.HttpResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.Date;
 import java.util.HashMap;
@@ -31,6 +41,247 @@ public class RechargeRecordController {
 
     @Reference(interfaceClass = FinanceAccountService.class,version = "1.0.0",check = false,timeout = 2000)
     private FinanceAccountService financeAccountService;
+
+
+    /**
+     *      查询微信支付状态
+     *          五分钟未支付,超时
+     * @param out_trade_no
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("/getWxPayResult")
+    @ResponseBody
+    public BaseResult getWxPayResult(@RequestParam(required = true,name = "out_trade_no")String out_trade_no,HttpSession session,Model model) throws Exception {
+
+
+        User user = (User) session.getAttribute("user");
+        Integer userId = user.getId();
+        if (ObjectUtils.isNotEmpty(user)){
+            //根据充值订单号获取记录
+            RechargeRecord rechargeRecordByRechargeNo = rechargeRecordService.findRechargeRecordByRechargeNo(out_trade_no);
+            Integer recordId = rechargeRecordByRechargeNo.getId();
+            Double rechargeMoney = rechargeRecordByRechargeNo.getRechargeMoney();
+            RechargeRecord updateRechargeRecordByStatus2 = new RechargeRecord();
+            updateRechargeRecordByStatus2.setId(recordId);
+            updateRechargeRecordByStatus2.setUid(userId);
+            updateRechargeRecordByStatus2.setRechargeStatus("2");
+
+            //定义一个循环的标记
+            int flag = 0;
+            while (true) {
+                Thread.sleep(3000);
+                flag++;
+
+                if (flag == 100) {
+                    //超时未支付,更新充值状态为2,代表支付失败
+                    rechargeRecordService.updateRechargeStatusById(updateRechargeRecordByStatus2);
+                    //TODO 同时关闭微信支付的订单
+                    break;
+                } else {
+                    //调用支付工程,查询微信支付的订单状态
+                    //http://localhost:9090/pay/getWxpayResult
+                    Map<String, Object> param = new HashMap<>();
+                    param.put("out_trade_no", out_trade_no);
+                    String result = HttpClientUtils.doPost("http://localhost:9090/pay/getWxpayResult", param);
+                    System.out.println(result);
+                    //解析json
+                    Map<String, String> resultMap = (Map<String, String>) JSONObject.parse(result);
+                    //获取请求的状态
+                    //返回状态码
+                    String return_code = resultMap.get("return_code");
+                    //业务结果
+                    String result_code = resultMap.get("result_code");
+
+                    if (StringUtils.equals(return_code, "SUCCESS")) {
+                        //请求成功
+                        if (StringUtils.equals(result_code, "SUCCESS")) {
+                            //查询成功
+                            //获取支付状态
+                            /**
+                             * SUCCESS—支付成功
+                             * REFUND—转入退款
+                             * NOTPAY—未支付
+                             * CLOSED—已关闭
+                             * REVOKED—已撤销（付款码支付）
+                             * USERPAYING--用户支付中（付款码支付）
+                             * PAYERROR--支付失败(其他原因，如银行返回失败)
+                             */
+                            String trade_state = resultMap.get("trade_state");
+                            if (StringUtils.equals(trade_state, "SUCCESS")) {
+                                //支付成功,更新充值状态为1
+                                RechargeRecord updateRechargeRecord = new RechargeRecord();
+                                updateRechargeRecord.setId(recordId);
+                                updateRechargeRecord.setUid(userId);
+                                updateRechargeRecord.setRechargeStatus("1");
+                                rechargeRecordService.updateRechargeStatusById(updateRechargeRecord);
+                                //更新账户余额'
+                                financeAccountService.updateAvailableMoneyByUid(userId,rechargeMoney);
+                                //返回支付成功
+                                return  BaseResult.success();
+                            } else if (StringUtils.equals(trade_state, "NOTPAY")) {
+                                //未支付,无需任何操作,记录日志
+                            } else if (StringUtils.equals(trade_state, "CLOSED")) {
+                                //已关闭,更新充值状态为2.
+                                rechargeRecordService.updateRechargeStatusById(updateRechargeRecordByStatus2);
+                                return BaseResult.error("交易已关闭,请重新支付");
+
+                            } else if (StringUtils.equals(trade_state, "PAYERROR")) {
+                                //支付失败,更新充值状态为2.返回一个提示消息,让他能够知道可以重新进行支付
+                                rechargeRecordService.updateRechargeStatusById(updateRechargeRecordByStatus2);
+                                return BaseResult.error("支付失败,请重新支付");
+                            }
+
+                        } else {
+                            return BaseResult.error("网络异常,请稍后再试");
+                        }
+
+                    } else {
+                        return BaseResult.error("网络异常,请稍后再试");
+                    }
+
+                    //随意返回一个页面,ajax请求,后台跳转页面
+                    //前台发送的是ajax请求,后台要跳转页面
+                    //结果:异步接收了一个页面的响应,响应的结果就是toRechargeBack页面
+                    //并没有给我跳转到该页面
+                    //如果发送ajax请求,在前段页面通过loaction = xxx页面的跳转
+
+                }
+            }
+
+        }
+        return BaseResult.error("网络异常,请稍后再试");
+
+    }
+
+
+
+
+
+    @RequestMapping("/wxCodeUrl")
+    public void wxCodeUrl(@RequestParam(required = true,name = "body") String body,
+                          @RequestParam(required = true,name = "out_trade_no") String out_trade_no,
+                          @RequestParam(required = true,name = "total_fee") String total_fee,
+                          @RequestParam(required = true,name = "code_url") String code_url,
+                          HttpServletResponse response) throws Exception {
+
+        Map<String,Object> param = new HashMap<>();
+        param.put("body",body);
+        param.put("out_trade_no",out_trade_no);
+        param.put("total_fee",total_fee);
+        param.put("code_url",code_url);
+        //调用支付工程
+//        String result = HttpClientUtils.doPost("http://localhost:9090/pay/getWxpayCodeUrl", param);
+//解析json数据
+//        Map<String,String> resultMap = (Map<String, String>) JSONObject.parse(result);
+//        System.out.println("result"+result);
+        //判断通信标识
+//        String return_code = resultMap.get("return_code");
+        //判断业务标识
+//        String result_code = resultMap.get("result_code");
+//        if (StringUtils.equals(return_code,"SUCCESS")){
+            //请求成功
+
+            //判断业务结果
+//            if (StringUtils.equals(result_code,"SUCCESS")){
+
+                //获取code_url
+//                String code_url = resultMap.get("code_url");
+                //在后端生成一个二维码图片,响应回去
+                //<img>标签
+                //调用encode对象,生成二维码
+                //参数1:生成的内容,code_url
+                //参数2:生成的格式,二维码
+                //参数3:宽度
+                //参数4:高度
+                //参数5:编码集,UTF-8
+                Map<EncodeHintType, String> hints = new HashMap<>();
+                hints.put(EncodeHintType.CHARACTER_SET,"UTF-8");
+                //生成矩阵对象
+                BitMatrix bitMatrix = new MultiFormatWriter().encode(
+                        code_url,
+                        BarcodeFormat.QR_CODE,
+                        300,
+                        300,
+                        hints
+                );
+                ServletOutputStream outputStream = response.getOutputStream();
+                MatrixToImageWriter.writeToStream(bitMatrix,"jpg",outputStream);
+
+                outputStream.flush();
+                outputStream.close();
+            }
+
+
+
+
+
+
+    /**
+     * 调用支付工程,获取微信支付的url
+     * @param rechargeMoney
+     * @return
+     */
+    @RequestMapping("/wxpay")
+    public String wxpay(Double rechargeMoney,Model model,HttpSession session) throws Exception {
+
+        User user = (User) session.getAttribute("user");
+        Integer userId = user.getId();
+
+
+        if (ObjectUtils.isNotEmpty(user)){
+            //生成充值记录
+            RechargeRecord recharge = rechargeRecordService.recharge(rechargeMoney, userId,"微信扫码支付");
+            //toWxpay.html页面需要:订单编号 订单类型 支付金额 微信地址
+            //订单编号
+            model.addAttribute("out_trade_no",recharge.getRechargeNo());
+            //订单类型
+            model.addAttribute("rechargeStatus",recharge.getRechargeDesc());
+            //支付金额
+            model.addAttribute("rechargeMoney",rechargeMoney);
+            //调用支付工程,获取微信支付的地址
+            Map<String,Object> param = new HashMap<>();
+            param.put("body","微信支付");
+            param.put("out_trade_no",recharge.getRechargeNo());
+            param.put("total_fee",rechargeMoney * 100);
+            String result = HttpClientUtils.doPost("http://localhost:9090/pay/getWxpayCodeUrl", param);
+
+            //解析json数据
+            Map<String,String> resultMap = (Map<String, String>) JSONObject.parse(result);
+            System.out.println("resultMap"+resultMap);
+            //判断通信标识
+            String return_code = resultMap.get("return_code");
+            //判断业务标识
+            String result_code = resultMap.get("result_code");
+            if (StringUtils.equals(return_code,"SUCCESS")){
+                //请求成功
+
+                //判断业务结果
+                if (StringUtils.equals(result_code,"SUCCESS")){
+
+                    //获取code_url
+                    String code_url = resultMap.get("code_url");
+                    //前段页面需要根据它生成一个二维码
+                    model.addAttribute("code_url",code_url);
+                    return "toWxpay";
+                }else {
+                    model.addAttribute("trade_msg","网络异常,请稍后再试");
+                    return "toRechargeBack";
+                }
+
+            }else {
+                model.addAttribute("trade_msg","网络异常,请稍后再试");
+                return "toRechargeBack";
+            }
+        }
+        //说明用户未登录
+        return "redirect:/";
+    }
+
+
+
+
+
 
     @RequestMapping("/returnCall")
 //    public String returnCall(@RequestParam Map<String,Object> param){
@@ -111,7 +362,8 @@ public class RechargeRecordController {
 
         }
 
-        return "";
+        model.addAttribute("trade_msg","网络异常,请稍后再试");
+        return "toRechargeBack";
     }
     /**
      *  支付宝回调的参数
@@ -140,6 +392,21 @@ public class RechargeRecordController {
         return "toRecharge";
     }
 
+
+
+    @RequestMapping("/page/toRechargeBack")
+    public String toRechargeBack(Model model,@RequestParam(required = false,name = "trade_msg")String trade_msg){
+
+        if (StringUtils.isNotEmpty(trade_msg)){
+            model.addAttribute("trade_msg",trade_msg);
+        }else {
+            //如果没有提示信息,给一个默认的信息
+            model.addAttribute("trade_msg","支付失败,请重新支付");
+        }
+
+        return "toRechargeBack";
+    }
+
     /**
      *  支付宝的充值的接口:
      *          需要调用支付宝的第三方支付
@@ -166,7 +433,7 @@ public class RechargeRecordController {
         //已登录
         try {
             //将充值记录插入到数据库中
-            RechargeRecord recharge = rechargeRecordService.recharge(rechargeMoney, user.getId());
+            RechargeRecord recharge = rechargeRecordService.recharge(rechargeMoney, user.getId(),"支付宝充值支付");
             //跳转到支付宝支付页面
             //需要准备参数有:标题 描述 订单号 充值金额
             model.addAttribute("subject","KAY金融网");
@@ -183,11 +450,7 @@ public class RechargeRecordController {
 
 
 
-    @RequestMapping("/wxpay")
-    public String wxpay(Double rechargeMoney){
 
-        return "";
-    }
 
 
 

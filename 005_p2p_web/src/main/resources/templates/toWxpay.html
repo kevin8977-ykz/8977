@@ -1,0 +1,128 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="动力金融网，投资理财，P2P理财，互联网金融，投资理财，理财，网络贷款，个人贷款，小额贷款，网络投融资平台, 网络理财, 固定收益, 100%本息保障" />
+    <meta name="description" content="动力金融网-专业的互联网金融平台！预期年化收益可高达13%，第三方资金托管，屡获大奖。"/>
+    <title>动力金融网-专业的互联网金融公司</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/center.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/fund-guanli.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/base.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/security.css}"/>
+    <script type="text/javascript" language="javascript" th:src="@{/js/jquery-1.7.2.min.js}"></script>
+    <script type="text/javascript" language="javascript" th:src="@{/js/trafficStatistics.js}"></script>
+
+    <!--qrious插件地址-->
+    <script src="https://cdn.bootcdn.net/ajax/libs/qrious/3.0.1/qrious.js"></script>
+
+    <script type="text/javascript" th:inline="javascript">
+            $(function () {
+
+                //生成二维码方式一: qrious 插件
+                //指定 Qrious参数:
+                //element:加载容器,img标签
+                //level : 容错率 H 为30%
+                //size : 二维码的尺寸
+                //value:根据该内容生成的二维码,url地址
+                var qr = new QRious({
+                    element: document.getElementById('qrcode'),
+                    level: 'H',
+                    padding: 25,
+                    size: 300,
+                    value: [[${code_url}]]
+                });
+
+                //发送一个ajax请求,得到查询的结果
+                //返回支付成功,跳转到myCenter页面
+                //支付失败,跳转到toRechargeBack页面
+                $.ajax({
+                    url:basepath + "/loan/getWxPayResult",
+                    data:{
+                        "out_trade_no":[[${out_trade_no}]]
+                    },
+                    type:"post",
+                    dataType:"json",
+                    success:function (data) {
+                        if (data.success){
+                            //支付成功
+                            location = basepath + "/loan/page/toMyCenter";
+                        }else {
+                            //跳转到错误页面 或者刷新二维码
+                            location = basepath + "/loan/page/toRechargeBack";
+                        }
+                    },
+                    error:function () {
+                        location = basepath + "/loan/page/toRechargeBack?trade_msg="+"网络异常,请稍后再试";
+                    }
+                })
+
+
+
+            });
+    </script>
+</head>
+
+<body>
+<!--页头start-->
+<div id="header">
+    <div th:include="commons/header :: html"></div>
+    <div th:include="commons/basepath :: html"></div>
+</div>
+<!--页头end-->
+
+<!-- 二级导航栏start -->
+<div th:include="commons/subNav :: html"></div>
+<!-- 二级导航栏end -->
+
+<!--页中start-->
+<div class="mainBox">
+    <div class="homeWap">
+        <div class="fund-guanli clearfix">
+            <div class="left-nav">
+                <div th:include="commons/leftNav :: html"></div>
+            </div>
+
+            <div class="right-body">
+                <div class="leftTitle"><span class="on">第三方支付</span></div>
+
+                <div class="unrecognized" style = "display:block;" id="unrecognized1">
+               <!--     <h3 th:text="${trade_msg}">显示错误信息</h3>
+                    <a class="input_btn" th:href="@{/loan/page/recharge}">再去充值</a>-->
+                    <!--
+                           调用接口,返回二维码图片
+                            二维码图片的生成方式:
+                                1.客户端生成
+                                    使用插件, qrious 插件
+                                2.服务器端生成
+                                       Zxing依赖生成二维码
+
+                             什么是二维码?
+                                    qucode:quick response code , 快速响应码, 1994年产生
+
+                                    存储的东西比较多样化
+                                        文字 图片 地址链接 指纹 声音 视频音频 等等
+
+                              条形码:
+                                    条形码存储的信息非常的有限
+                    -->
+                    <h3 th:text="|订单编号:${out_trade_no}&nbsp;&nbsp;&nbsp;订单类型:${rechargeStatus}&nbsp;&nbsp;&nbsp;支付金额:${rechargeMoney}|">订单编号:xxxxxxxxxxxxxxxx 订单类型:xxxxxxxxxx 支付金额:xxxxx元</h3>
+                    <!--前端使用qirous生成-->
+                    <img id="qrcode">
+
+                    <!--img的src 相当于发送了一个请求-->
+                    <!--<img id="qrcode" th:src="@{/loan/wxCodeUrl(body=${rechargeStatus},out_trade_no=${out_trade_no},total_fee=${rechargeMoney},code_url=${code_url})}">-->
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--页中end-->
+
+<!--页脚start-->
+<div th:include="commons/footer :: html"></div>
+<!--页脚end-->
+</body>
+</html>

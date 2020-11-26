@@ -65,7 +65,8 @@ $(function(){
                 <!--登录后begin-->
                 <div class="logged">
                     <div class="userinfo-up">
-                        <a href="loan/myCenter" class="user-phone" th:text="${session.user.getPhone()}">13788889999</a><a href="/webPage/account/member_systems.html" class="user-vip" id="member">VIP1</a><i></i>
+                        <!-- href="loan/myCenter"   -->
+                        <a th:href="@{/loan/page/toMyCenter}" class="user-phone" th:text="${session.user.getPhone()}">13788889999</a><a   href="/webPage/account/member_systems.html" class="user-vip" id="member">VIP7</a><i></i>
                     </div>
                     <div class="userinfo-drop-down" style="height: 0px;">
                         <div class="down-bk">

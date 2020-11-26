@@ -77,6 +77,28 @@ public class RechargeRecordServiceImpl implements RechargeRecordService {
     public RechargeRecord recharge(Double rechargeMoney, Integer uid) {
         //将充值记录插入到数据库中
         RechargeRecord rechargeRecord = new RechargeRecord();
+       /* rechargeRecord.setUid(uid);
+        rechargeRecord.setRechargeTime(new Date());
+        //0 充值中  1 充值成功 2 充值失败
+        rechargeRecord.setRechargeStatus("0");
+        //充值订单号,全局唯一不能重复
+        String rechargeNo = getRechargeNo();
+        rechargeRecord.setRechargeNo(rechargeNo);
+        rechargeRecord.setRechargeMoney(rechargeMoney);
+        rechargeRecord.setRechargeDesc("支付宝充值支付");*/
+        //插入到数据库中
+        int i = rechargeRecordMapper.insertSelective(rechargeRecord);
+        if (i <= 0){
+            throw new RuntimeException("充值失败,请稍后再试");
+        }
+        return rechargeRecord;
+
+    }
+
+    @Override
+    public RechargeRecord recharge(Double rechargeMoney, Integer uid, String rechargeStatus) {
+        //将充值记录插入到数据库中
+        RechargeRecord rechargeRecord = new RechargeRecord();
         rechargeRecord.setUid(uid);
         rechargeRecord.setRechargeTime(new Date());
         //0 充值中  1 充值成功 2 充值失败
@@ -85,7 +107,7 @@ public class RechargeRecordServiceImpl implements RechargeRecordService {
         String rechargeNo = getRechargeNo();
         rechargeRecord.setRechargeNo(rechargeNo);
         rechargeRecord.setRechargeMoney(rechargeMoney);
-        rechargeRecord.setRechargeDesc("支付宝充值支付");
+        rechargeRecord.setRechargeDesc(rechargeStatus);
         //插入到数据库中
         int i = rechargeRecordMapper.insertSelective(rechargeRecord);
         if (i <= 0){
